@@ -16,12 +16,17 @@ const char fmt[] = (
 int main() {
 	int i = 0;
 
-	printf(fmt, a, b, c, d);
+	printf("/* f(x) = %.3f * x ^ 3 - %.1f * x ^ 2 + %.0f * x + %.0f */\n\n", a, b, c, d);
 
-	printf("#define TSIZES POP(");
-	for (i = 0; i < l; i++)
-		printf(", %s", label[i]);
-	printf(")\n");
+	printf("#ifndef TS_H\n#define TS_N %d\n#define TS ", l);
+	for (;;) {
+		printf("%s", label[i]);
+		i++;
+		if (i >= l)
+			break;
+		printf(", ");
+	}
+	putchar('\n');
 
 	for (i = 1; i <= l; i++)
 		printf("#define T_%s\t%0.1fpx\n", label[i - 1], f(0.93f * i));

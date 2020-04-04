@@ -1,8 +1,8 @@
 INSTALL ?= install
 DESTDIR ?= /srv/http/bt
 
-q.css: t.h style.css
-	sed 's/^\/\*gcc//g;s|^\*/$$||g' style.css | gcc -E -P -nostdinc -undef -x c - | sed 's/\$$/#/g' > $@
+q.css: t.h q.h.css
+	sed 's/^\/\*gcc//g;s|^\*/$$||g' q.h.css | gcc -E -P -nostdinc -undef -x c - | sed 's/\$$/#/g' > $@
 
 ./t: t.c
 	cc t.c -o $@

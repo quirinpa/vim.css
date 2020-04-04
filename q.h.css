@@ -1,7 +1,4 @@
 /*gcc
-#include "t.h"
-#define T(_s) T_ ## _s
-
 #define S(a) S_ ## a
 #define S_ 16px
 #define S_s 8px
@@ -35,27 +32,6 @@
 #define BH (S_xl + RP)
 
 #define PI 3.1415
-
-#define CALL(n, pre, ...) CALL_ ## n(pre, __VA_ARGS__)
-#define CALL_1(pre, a) pre(a)
-#define CALL_2(pre, a, ...) pre(a) CALL_1(pre, __VA_ARGS__)
-#define CALL_3(pre, a, ...) pre(a) CALL_2(pre, __VA_ARGS__)
-#define CALL_4(pre, a, ...) pre(a) CALL_3(pre, __VA_ARGS__)
-#define CALL_5(pre, a, ...) pre(a) CALL_4(pre, __VA_ARGS__)
-#define CALL_6(pre, a, ...) pre(a) CALL_5(pre, __VA_ARGS__)
-#define CALL_7(pre, a, ...) pre(a) CALL_6(pre, __VA_ARGS__)
-#define CALL_8(pre, a, ...) pre(a) CALL_7(pre, __VA_ARGS__)
-#define CALL_9(pre, a, ...) pre(a) CALL_8(pre, __VA_ARGS__)
-#define CALL_10(pre, a, ...) pre(a) CALL_9(pre, __VA_ARGS__)
-#define CALL_11(pre, a, ...) pre(a) CALL_10(pre, __VA_ARGS__)
-#define CALL_12(pre, a, ...) pre(a) CALL_11(pre, __VA_ARGS__)
-#define CALL_13(pre, a, ...) pre(a) CALL_12(pre, __VA_ARGS__)
-#define CALL_14(pre, a, ...) pre(a) CALL_13(pre, __VA_ARGS__)
-#define CALL_15(pre, a, ...) pre(a) CALL_14(pre, __VA_ARGS__)
-#define CALL_16(pre, a, ...) pre(a) CALL_15(pre, __VA_ARGS__)
-
-#define TSIZE(_ts) \
-	 .t ## _ts { font-size: T(_ts); }
 
 #define WRAP(_s) \
 	.w ## _s { \
@@ -168,8 +144,15 @@
 .tuc { text-transform: uppercase; }
 .tb { font-weight: bold; }
 .tnow { white-space: nowrap; }
+
 /*gcc
-CALL_8(TSIZE, xs, s,  , ml, l, xl, xxl, Xl)
+#include "utils.h"
+#include "t.h"
+
+#define DECLARE_T(_t) \
+	 .t ## _t { font-size: T_ ## _t; }
+
+DECLARE(T, TS)
 */
 
 .c > * { vertical-align: middle; }
