@@ -1,10 +1,6 @@
 #ifndef FIXED_H
 #define FIXED_H
 
-#define PI 3.1415
-#define RP(_s) (S_ ## _s / PI)
-#define BH(_s) (S_ ## _s + RP(_s))
-
 #define FIXED_MAIN(_s) min-height: calc(100vh - H_ ## _s); margin-top: H_ ## _s;
 
 #define FIXED(_s) \

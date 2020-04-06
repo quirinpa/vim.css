@@ -1,23 +1,29 @@
 INSTALL ?= install
 DESTDIR ?= /srv/http/bt
 
-q.css: main.h
-	gcc -E -P -nostdinc -undef -x c main.h | sed 's/\$$/#/g' > $@
+vim.css: t.h c.h main.h
+	gcc ${CFLAGS} -E -P -nostdinc -undef -x c main.h > $@
 
-./t: t.c
+t: t.c
 	cc t.c -o $@
 
-./t.h: t.c ./t
+c: c.c
+	cc c.c -o $@
+
+t.h: t.c t
 	./t > t.h
 
-clean:
-	rm t.h t q.css
+c.h: c.c c
+	./c > c.h
 
-install: q.css
-	${INSTALL} q.css ${DESTDIR}/styles
+clean:
+	rm t.h t c.h c vim.css
+
+install: vim.css
+	${INSTALL} vim.css ${DESTDIR}/styles
 
 depend:
-	makedepend main.h
+	makedepend ${CFLAGS} main.h
 
 PHONY: clean install depend
 # DO NOT DELETE

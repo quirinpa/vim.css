@@ -43,6 +43,9 @@ CALL_OF(S, FLEX_VERTICAL, SS)
 .fg- { flex-grow: 0 !important; }
 .fgc > * { flex-grow: 1; }
 
+.fa.K { align-self: flex-start; }
+.fa.J { align-self: flex-end; }
+
 .rel { position: relative; }
 .abs { position: absolute; }
 .abs.cv { top: 50%; }

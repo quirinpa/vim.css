@@ -28,12 +28,21 @@
 	table.P ## _s > tbody > tr > td:last-child { padding-right: S(_s); } \
 	table.P ## _s > tbody > tr > td { padding: S(_s) calc(S(_s) / 2); }
 
+#define MARGIN(_s) \
+	.mH ## _s { margin-left: S(_s); } \
+	.mJ ## _s { margin-bottom: S(_s); } \
+	.mK ## _s { margin-top: S(_s); } \
+	.mL ## _s { margin-right: S(_s); }
+
 CALL_OF(S, SIZE, SS)
 CALL_OF(S, PADDING, SS)
 
 CALL_2(TABLE_PADDING, s, )
 CALL_2(CENTER_ABS_V, l, )
 CALL_2(ABS_PADDING, xl, )
+CALL_2(ABS_PADDING, s, )
+
+MARGIN(l)
 
 /* #define FW_PADDING(_s) \ */
 /* .p > .fw { width: calc(100% - 2 * S(_s)); } */

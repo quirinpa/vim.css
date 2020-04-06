@@ -17,9 +17,12 @@
 #define DECLARE_11(W, a, ...) DECLARE_ ## W(a) DECLARE_10(W, __VA_ARGS__)
 #define DECLARE_12(W, a, ...) DECLARE_ ## W(a) DECLARE_11(W, __VA_ARGS__)
 #define DECLARE_13(W, a, ...) DECLARE_ ## W(a) DECLARE_12(W, __VA_ARGS__)
+#define DECLARE_14(W, a, ...) DECLARE_ ## W(a) DECLARE_13(W, __VA_ARGS__)
+#define DECLARE_15(W, a, ...) DECLARE_ ## W(a) DECLARE_14(W, __VA_ARGS__)
+#define DECLARE_16(W, a, ...) DECLARE_ ## W(a) DECLARE_15(W, __VA_ARGS__)
 
 #define CALL_OF(W, D, WS) CAT(CALL_OF_, CAT(W, S_N))(W, D, WS)
-#define CALL_OF_1(W, D, a) CALL_OF_ ## W(a)
+#define CALL_OF_1(W, D, a) D(a)
 #define CALL_OF_2(W, D, a, ...) D(a) CALL_OF_1(W, D, __VA_ARGS__)
 #define CALL_OF_3(W, D, a, ...) D(a) CALL_OF_2(W, D, __VA_ARGS__)
 #define CALL_OF_4(W, D, a, ...) D(a) CALL_OF_3(W, D, __VA_ARGS__)
@@ -31,6 +34,10 @@
 #define CALL_OF_10(W, D, a, ...) D(a) CALL_OF_9(W, D, __VA_ARGS__)
 #define CALL_OF_11(W, D, a, ...) D(a) CALL_OF_10(W, D, __VA_ARGS__)
 #define CALL_OF_12(W, D, a, ...) D(a) CALL_OF_11(W, D, __VA_ARGS__)
+#define CALL_OF_13(W, D, a, ...) D(a) CALL_OF_12(W, D, __VA_ARGS__)
+#define CALL_OF_14(W, D, a, ...) D(a) CALL_OF_13(W, D, __VA_ARGS__)
+#define CALL_OF_15(W, D, a, ...) D(a) CALL_OF_14(W, D, __VA_ARGS__)
+#define CALL_OF_16(W, D, a, ...) D(a) CALL_OF_15(W, D, __VA_ARGS__)
 
 #define CALL(n, pre, ...) CALL_ ## n(pre, __VA_ARGS__)
 #define CALL_1(pre, a) pre(a)
@@ -49,6 +56,7 @@
 #define CALL_14(pre, a, ...) pre(a) CALL_13(pre, __VA_ARGS__)
 #define CALL_15(pre, a, ...) pre(a) CALL_14(pre, __VA_ARGS__)
 #define CALL_16(pre, a, ...) pre(a) CALL_15(pre, __VA_ARGS__)
+#define CALL_17(pre, a, ...) pre(a) CALL_16(pre, __VA_ARGS__)
 
 #define VARS(W, WS) CAT(VARS_, CAT(W, S_N))(W, WS)
 #define VARS_1(W, a) VAR(W, a)
@@ -64,6 +72,9 @@
 #define VARS_11(W, a, ...) VAR(W, a) VARS_10(W, __VA_ARGS__)
 #define VARS_12(W, a, ...) VAR(W, a) VARS_11(W, __VA_ARGS__)
 #define VARS_13(W, a, ...) VAR(W, a) VARS_12(W, __VA_ARGS__)
+#define VARS_14(W, a, ...) VAR(W, a) VARS_13(W, __VA_ARGS__)
+#define VARS_15(W, a, ...) VAR(W, a) VARS_14(W, __VA_ARGS__)
+#define VARS_16(W, a, ...) VAR(W, a) VARS_15(W, __VA_ARGS__)
 #define VAR(W, a) --W ## a: W ## _ ## a;
 
 #endif
