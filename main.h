@@ -31,43 +31,9 @@
 #include "fixed.h"
 #endif
 
-.round {
-	text-align: center;
-	border-radius: 50%;
-	vertical-align: middle;
-	display: inline-block;
-}
-
-#define ROUND_TEXT(_t) \
-	.round.t ## _t { \
-		line-height: T_ ## _t; \
-		width: T_ ## _t; \
-	}
-
-#define ROUND_PADDING(_p, _t) \
-	.p ## _p.round.t ## _t { \
-		line-height: T_ ## _t; \
-		width: calc(T_ ## _t + 2 * S_ ## _p); \
-	}
-
-.rl { border-radius: S_l; }
-.rHl { border-top-left-radius: S_l; border-bottom-left-radius: S_l; }
-.rHxl { border-top-left-radius: S_xl; border-bottom-left-radius: S_xl; }
-.rKLl { border-top-right-radius: S_l; }
-.rHxl { border-top-left-radius: S_xl; border-bottom-left-radius: S_xl; }
-/* ROUND_PADDING( , m) */
-/* ROUND_PADDING( , l) */
-/* ROUND_PADDING(s, l) */
-/* ROUND_PADDING(xs, xl) */
-/* ROUND_TEXT(l) */
-/* ROUND_TEXT(ml) */
-ROUND_TEXT( )
-ROUND_TEXT(xl)
-/* ROUND_TEXT(xXl) */
-ROUND_PADDING( , xXl)
-ROUND_PADDING( , Xxl)
-ROUND_PADDING( l, )
-
+#ifdef CONFIG_ROUND
+#include "round.h"
+#endif
 
 label > input, label > textarea { display: block; }
 

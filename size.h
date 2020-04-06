@@ -34,14 +34,11 @@
 	.mK ## _s { margin-top: S(_s); } \
 	.mL ## _s { margin-right: S(_s); }
 
-CALL_OF(S, SIZE, SS)
-CALL_OF(S, PADDING, SS)
-
-CALL_2(TABLE_PADDING, s, )
-CALL_2(CENTER_ABS_V, l, )
-CALL_2(ABS_PADDING, xl, )
-CALL_2(ABS_PADDING, s, )
-
+CALL(SIZE, SS)
+CALL(PADDING, SS)
+CALL(TABLE_PADDING, s, )
+CALL(CENTER_ABS_V, l, )
+CALL(ABS_PADDING, s, xl, )
 MARGIN(l)
 
 /* #define FW_PADDING(_s) \ */

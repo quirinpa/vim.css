@@ -31,9 +31,9 @@
 	} \
 	.w ## _s > * { margin-bottom: S(_s); margin-right: S(_s); }
 
-CALL_OF(S, HORIZONTAL, SS)
-CALL_OF(S, VERTICAL, SS)
-CALL_OF(S, FLEX_VERTICAL, SS)
+CALL(HORIZONTAL, SS)
+CALL(VERTICAL, SS)
+CALL(FLEX_VERTICAL, SS)
 
 .c > * { vertical-align: middle; }
 .f.c { align-items: center; }

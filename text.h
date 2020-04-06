@@ -1,7 +1,7 @@
 #ifndef TEXT_H
 #define TEXT_H
 
-#define DECLARE_T(_t) \
+#define TEXT_SIZE(_t) \
 	 .t ## _t { font-size: T_ ## _t; }
 
 #define COLOR(_c) \
@@ -17,7 +17,7 @@
 	.BK ## _c { border-top: solid thin C_ ## _c; } \
 	.BL ## _c { border-right: solid thin C_ ## _c; }
 
-DECLARE(T, TS)
+CALL(TEXT_SIZE, TS)
 
 .tal { text-align: left; }
 .tac { text-align: center; }
@@ -36,8 +36,8 @@ DECLARE(T, TS)
 
 .tnow { white-space: nowrap; }
 
-CALL_OF(C, BG_COLOR, CS)
-CALL_OF(C, COLOR, CS)
-CALL_OF(C, BO_COLOR, CS)
+CALL(BG_COLOR, CS)
+CALL(COLOR, CS)
+CALL(BO_COLOR, CS)
 
 #endif

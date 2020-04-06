@@ -3,62 +3,29 @@
 #define CAT(a, ...) PRIMITIVE_CAT(a, __VA_ARGS__)
 #define PRIMITIVE_CAT(a, ...) a ## __VA_ARGS__
 
-#define DECLARE(W, WS) CAT(DECLARE_, CAT(W, S_N))(W, WS)
-#define DECLARE_1(W, a) DECLARE_ ## W(a)
-#define DECLARE_2(W, a, ...) DECLARE_ ## W(a) DECLARE_1(W, __VA_ARGS__)
-#define DECLARE_3(W, a, ...) DECLARE_ ## W(a) DECLARE_2(W, __VA_ARGS__)
-#define DECLARE_4(W, a, ...) DECLARE_ ## W(a) DECLARE_3(W, __VA_ARGS__)
-#define DECLARE_5(W, a, ...) DECLARE_ ## W(a) DECLARE_4(W, __VA_ARGS__)
-#define DECLARE_6(W, a, ...) DECLARE_ ## W(a) DECLARE_5(W, __VA_ARGS__)
-#define DECLARE_7(W, a, ...) DECLARE_ ## W(a) DECLARE_6(W, __VA_ARGS__)
-#define DECLARE_8(W, a, ...) DECLARE_ ## W(a) DECLARE_7(W, __VA_ARGS__)
-#define DECLARE_9(W, a, ...) DECLARE_ ## W(a) DECLARE_8(W, __VA_ARGS__)
-#define DECLARE_10(W, a, ...) DECLARE_ ## W(a) DECLARE_9(W, __VA_ARGS__)
-#define DECLARE_11(W, a, ...) DECLARE_ ## W(a) DECLARE_10(W, __VA_ARGS__)
-#define DECLARE_12(W, a, ...) DECLARE_ ## W(a) DECLARE_11(W, __VA_ARGS__)
-#define DECLARE_13(W, a, ...) DECLARE_ ## W(a) DECLARE_12(W, __VA_ARGS__)
-#define DECLARE_14(W, a, ...) DECLARE_ ## W(a) DECLARE_13(W, __VA_ARGS__)
-#define DECLARE_15(W, a, ...) DECLARE_ ## W(a) DECLARE_14(W, __VA_ARGS__)
-#define DECLARE_16(W, a, ...) DECLARE_ ## W(a) DECLARE_15(W, __VA_ARGS__)
+#define COUNT(...) \
+	         PP_NARG_(__VA_ARGS__, PP_RSEQ_N())
+#define PP_NARG_(...) \
+	PP_ARG_N(__VA_ARGS__)
+#define PP_ARG_N( \
+		_1, _2, _3, _4, _5, _6, _7, _8, _9, _10, \
+		_11, _12, _13, _14, _15, _16, _17, _18, _19, _20, \
+		_21, _22, _23, _24, _25, _26, _27, _28, _29, _30, \
+		_31, _32, _33, _34, _35, _36, _37, _38, _39, _40, \
+		_41, _42, _43, _44, _45, _46, _47, _48, _49, _50, \
+		_51, _52, _53, _54, _55, _56, _57, _58, _59, _60, \
+		_61, _62, _63, N, ...) N
 
-#define CALL_OF(W, D, WS) CAT(CALL_OF_, CAT(W, S_N))(W, D, WS)
-#define CALL_OF_1(W, D, a) D(a)
-#define CALL_OF_2(W, D, a, ...) D(a) CALL_OF_1(W, D, __VA_ARGS__)
-#define CALL_OF_3(W, D, a, ...) D(a) CALL_OF_2(W, D, __VA_ARGS__)
-#define CALL_OF_4(W, D, a, ...) D(a) CALL_OF_3(W, D, __VA_ARGS__)
-#define CALL_OF_5(W, D, a, ...) D(a) CALL_OF_4(W, D, __VA_ARGS__)
-#define CALL_OF_6(W, D, a, ...) D(a) CALL_OF_5(W, D, __VA_ARGS__)
-#define CALL_OF_7(W, D, a, ...) D(a) CALL_OF_6(W, D, __VA_ARGS__)
-#define CALL_OF_8(W, D, a, ...) D(a) CALL_OF_7(W, D, __VA_ARGS__)
-#define CALL_OF_9(W, D, a, ...) D(a) CALL_OF_8(W, D, __VA_ARGS__)
-#define CALL_OF_10(W, D, a, ...) D(a) CALL_OF_9(W, D, __VA_ARGS__)
-#define CALL_OF_11(W, D, a, ...) D(a) CALL_OF_10(W, D, __VA_ARGS__)
-#define CALL_OF_12(W, D, a, ...) D(a) CALL_OF_11(W, D, __VA_ARGS__)
-#define CALL_OF_13(W, D, a, ...) D(a) CALL_OF_12(W, D, __VA_ARGS__)
-#define CALL_OF_14(W, D, a, ...) D(a) CALL_OF_13(W, D, __VA_ARGS__)
-#define CALL_OF_15(W, D, a, ...) D(a) CALL_OF_14(W, D, __VA_ARGS__)
-#define CALL_OF_16(W, D, a, ...) D(a) CALL_OF_15(W, D, __VA_ARGS__)
+#define PP_RSEQ_N() \
+	63,62,61,60, \
+	59,58,57,56,55,54,53,52,51,50, \
+	49,48,47,46,45,44,43,42,41,40, \
+	39,38,37,36,35,34,33,32,31,30, \
+	29,28,27,26,25,24,23,22,21,20, \
+	19,18,17,16,15,14,13,12,11,10, \
+	9,8,7,6,5,4,3,2,1,0
 
-#define CALL(n, pre, ...) CALL_ ## n(pre, __VA_ARGS__)
-#define CALL_1(pre, a) pre(a)
-#define CALL_2(pre, a, ...) pre(a) CALL_1(pre, __VA_ARGS__)
-#define CALL_3(pre, a, ...) pre(a) CALL_2(pre, __VA_ARGS__)
-#define CALL_4(pre, a, ...) pre(a) CALL_3(pre, __VA_ARGS__)
-#define CALL_5(pre, a, ...) pre(a) CALL_4(pre, __VA_ARGS__)
-#define CALL_6(pre, a, ...) pre(a) CALL_5(pre, __VA_ARGS__)
-#define CALL_7(pre, a, ...) pre(a) CALL_6(pre, __VA_ARGS__)
-#define CALL_8(pre, a, ...) pre(a) CALL_7(pre, __VA_ARGS__)
-#define CALL_9(pre, a, ...) pre(a) CALL_8(pre, __VA_ARGS__)
-#define CALL_10(pre, a, ...) pre(a) CALL_9(pre, __VA_ARGS__)
-#define CALL_11(pre, a, ...) pre(a) CALL_10(pre, __VA_ARGS__)
-#define CALL_12(pre, a, ...) pre(a) CALL_11(pre, __VA_ARGS__)
-#define CALL_13(pre, a, ...) pre(a) CALL_12(pre, __VA_ARGS__)
-#define CALL_14(pre, a, ...) pre(a) CALL_13(pre, __VA_ARGS__)
-#define CALL_15(pre, a, ...) pre(a) CALL_14(pre, __VA_ARGS__)
-#define CALL_16(pre, a, ...) pre(a) CALL_15(pre, __VA_ARGS__)
-#define CALL_17(pre, a, ...) pre(a) CALL_16(pre, __VA_ARGS__)
-
-#define VARS(W, WS) CAT(VARS_, CAT(W, S_N))(W, WS)
+#define VARS(W, WS) CAT(VARS_, COUCAT(W, S_N))(W, WS)
 #define VARS_1(W, a) VAR(W, a)
 #define VARS_2(W, a, ...) VAR(W, a) VARS_1(W, __VA_ARGS__)
 #define VARS_3(W, a, ...) VAR(W, a) VARS_2(W, __VA_ARGS__)
@@ -76,5 +43,46 @@
 #define VARS_15(W, a, ...) VAR(W, a) VARS_14(W, __VA_ARGS__)
 #define VARS_16(W, a, ...) VAR(W, a) VARS_15(W, __VA_ARGS__)
 #define VAR(W, a) --W ## a: W ## _ ## a;
+
+#define CALL(D, ...) CAT(CALL_, COUNT(__VA_ARGS__))(D, __VA_ARGS__)
+#define CALL_1(D, a) D(a)
+#define CALL_2(D, a, ...) D(a) CALL_1(D, __VA_ARGS__)
+#define CALL_3(D, a, ...) D(a) CALL_2(D, __VA_ARGS__)
+#define CALL_4(D, a, ...) D(a) CALL_3(D, __VA_ARGS__)
+#define CALL_5(D, a, ...) D(a) CALL_4(D, __VA_ARGS__)
+#define CALL_6(D, a, ...) D(a) CALL_5(D, __VA_ARGS__)
+#define CALL_7(D, a, ...) D(a) CALL_6(D, __VA_ARGS__)
+#define CALL_8(D, a, ...) D(a) CALL_7(D, __VA_ARGS__)
+#define CALL_9(D, a, ...) D(a) CALL_8(D, __VA_ARGS__)
+#define CALL_10(D, a, ...) D(a) CALL_9(D, __VA_ARGS__)
+#define CALL_11(D, a, ...) D(a) CALL_10(D, __VA_ARGS__)
+#define CALL_12(D, a, ...) D(a) CALL_11(D, __VA_ARGS__)
+#define CALL_13(D, a, ...) D(a) CALL_12(D, __VA_ARGS__)
+#define CALL_14(D, a, ...) D(a) CALL_13(D, __VA_ARGS__)
+#define CALL_15(D, a, ...) D(a) CALL_14(D, __VA_ARGS__)
+#define CALL_16(D, a, ...) D(a) CALL_15(D, __VA_ARGS__)
+#define CALL_17(D, a, ...) D(a) CALL_16(D, __VA_ARGS__)
+#define CALL_18(D, a, ...) D(a) CALL_17(D, __VA_ARGS__)
+
+#if 0
+#define READ(W, WS) CAT(READ_, COUNT(WS))(WS)
+#define READ_1(W, a) CAT(W, a)
+#define READ_2(W, a, ...) CAT(W, a), READ_1(W, __VA_ARGS__)
+#define READ_3(W, a, ...) CAT(W, a), READ_2(W, __VA_ARGS__)
+#define READ_4(W, a, ...) CAT(W, a), READ_3(W, __VA_ARGS__)
+#define READ_5(W, a, ...) CAT(W, a), READ_4(W, __VA_ARGS__)
+#define READ_6(W, a, ...) CAT(W, a), READ_5(W, __VA_ARGS__)
+#define READ_7(W, a, ...) CAT(W, a), READ_6(W, __VA_ARGS__)
+#define READ_8(W, a, ...) CAT(W, a), READ_7(W, __VA_ARGS__)
+#define READ_9(W, a, ...) CAT(W, a), READ_8(W, __VA_ARGS__)
+#define READ_10(W, a, ...) CAT(W, a), READ_9(W, __VA_ARGS__)
+#define READ_11(W, a, ...) CAT(W, a), READ_10(W, __VA_ARGS__)
+#define READ_12(W, a, ...) CAT(W, a), READ_11(W, __VA_ARGS__)
+#define READ_13(W, a, ...) CAT(W, a), READ_12(W, __VA_ARGS__)
+#define READ_14(W, a, ...) CAT(W, a), READ_13(W, __VA_ARGS__)
+#define READ_15(W, a, ...) CAT(W, a), READ_14(W, __VA_ARGS__)
+#define READ_16(W, a, ...) CAT(W, a), READ_15(W, __VA_ARGS__)
+#define READ_17(W, a, ...) CAT(W, a), READ_16(W, __VA_ARGS__)
+#endif
 
 #endif

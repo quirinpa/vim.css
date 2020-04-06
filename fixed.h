@@ -24,6 +24,6 @@
 }
 .F main, .F header { width: 100%; }
 
-CALL_4(FIXED, s, xs, l, )
+CALL(FIXED, s, xs, l, )
 
 #endif
