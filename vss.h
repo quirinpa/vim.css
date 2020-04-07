@@ -39,8 +39,7 @@ label > input, label > textarea { display: block; }
 
 .fw input, .fw select, .fw textarea { width: 100%; }
 .fw input { width: calc(100% - 2 * CONFIG_IPH - 2px); }
-input, textarea { padding-left: 6px CONFIG_IPH; }
+input, textarea { padding: 6px CONFIG_IPH; }
 
-main > .abs.J { bottom: S_; }
 input, textarea { color: C_black; }
 .click { cursor: pointer; user-select: none; }

@@ -24,6 +24,9 @@
 }
 .F main, .F header { width: 100%; }
 
-CALL(FIXED, s, xs, l, )
+.rpK {
+	padding-top: calc(RP(xl)) !important;
+	/* padding-bottom: calc(BH(xl) + RP(xl)); */
+}
 
 #endif

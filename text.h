@@ -17,8 +17,6 @@
 	.BK ## _c { border-top: solid thin C_ ## _c; } \
 	.BL ## _c { border-right: solid thin C_ ## _c; }
 
-CALL(TEXT_SIZE, TS)
-
 .tal { text-align: left; }
 .tac { text-align: center; }
 .tar { text-align: right; }
@@ -35,9 +33,5 @@ CALL(TEXT_SIZE, TS)
 .tbXl { font-weight: 900; }
 
 .tnow { white-space: nowrap; }
-
-CALL(BG_COLOR, CS)
-CALL(COLOR, CS)
-CALL(BO_COLOR, CS)
 
 #endif

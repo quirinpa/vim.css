@@ -25,7 +25,7 @@
 	19,18,17,16,15,14,13,12,11,10, \
 	9,8,7,6,5,4,3,2,1,0
 
-#define VARS(W, WS) CAT(VARS_, COUCAT(W, S_N))(W, WS)
+#define VARS(W, WS) CAT(VARS_, CAT(W, S_N))(W, WS)
 #define VARS_1(W, a) VAR(W, a)
 #define VARS_2(W, a, ...) VAR(W, a) VARS_1(W, __VA_ARGS__)
 #define VARS_3(W, a, ...) VAR(W, a) VARS_2(W, __VA_ARGS__)

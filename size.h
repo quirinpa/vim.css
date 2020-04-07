@@ -34,13 +34,6 @@
 	.mK ## _s { margin-top: S(_s); } \
 	.mL ## _s { margin-right: S(_s); }
 
-CALL(SIZE, SS)
-CALL(PADDING, SS)
-CALL(TABLE_PADDING, s, )
-CALL(CENTER_ABS_V, l, )
-CALL(ABS_PADDING, s, xl, )
-MARGIN(l)
-
 /* #define FW_PADDING(_s) \ */
 /* .p > .fw { width: calc(100% - 2 * S(_s)); } */
 

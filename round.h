@@ -31,11 +31,4 @@
 	.rKH ## _s { border-top-left-radius: S_ ## _s; } \
 	.rKL ## _s { border-top-right-radius: S_ ## _s; }
 
-CALL(ROUND_EDGE, l, xl)
-CALL(ROUND_TEXT, , xl)
-/* CALL(ROUND_PADDING, , l, xXl, Xxl) */
-
-ROUND_PADDING( , xXl)
-ROUND_PADDING( , Xxl)
-ROUND_PADDING( l, )
 #endif
