@@ -12,7 +12,7 @@ static skv colors[] = {
 	{ "grey", "#a8aab8" }, // lightGreyBlue
 	{ "sun", "#ffd81c" }, // sunYellow
 	{ "turquoise", "#00c1c5" }, // turquoiseBlue
-	/* { "paleGrey", "#f5f5f7" }, // <remove> */
+	{ "palegrey", "#f5f5f7" }, // <remove>
 	{ "white", "white" },
 	{ "black", "black" },
 	/* { "white48", "rgba(255, 255, 255, 0.48)" }, */

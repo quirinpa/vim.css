@@ -1,11 +1,12 @@
 gcc-vss := gcc ${CFLAGS} -E -P -nostdinc -undef -x c
 vss-path ?= .
 vss-dirs := bin
+vss-out ?= vim.css
 vss-CFLAGS-y := -I${srcdir} -I${vss-path}
 # vss-exe := t c
-vss-clean-y := ./t.h ./c.h ./bin/t ./bin/c vim.css
+vss-clean-y := ./t.h ./c.h ./bin/t ./bin/c ${vss-out}
 
-vim.css: ${vss-dirs} ./t.h ./c.h ./vss.config.h
+$(vss-out): ${vss-dirs} ./t.h ./c.h ./vss.config.h
 	gcc ${vss-CFLAGS-y} -E -P -nostdinc -undef -x c ./vss.config.h > $@
 
 $(vss-dirs):
@@ -24,9 +25,12 @@ $(vss-dirs):
 	cc ${vss-path}/c.c -o $@
 
 clean:
-	rm ${vss-clean-y}
+	-rm ${vss-clean-y} >/dev/null 2>&1
 
-depend:
-	makedepend ${vss-CFLAGS-y} $(srcdir)/vss.h
+PHONY: clean
 
-PHONY: clean depend
+$(vss-out): $(srcdir)/t.h $(srcdir)/c.h
+$(vss-out): $(vss-path)/vss.h $(vss-path)/utils.h
+$(vss-out): $(vss-path)/s.h $(vss-path)/h.h
+$(vss-out): $(vss-path)/text.h $(vss-path)/size.h
+$(vss-out): $(vss-path)/alignment.h $(vss-path)/round.h

@@ -9,7 +9,7 @@
 
 #define VERTICAL(_s) \
 	.v ## _s > * { margin-top: S(_s); display: block } \
-	.v ## _s > :first-child { margin-top: 0; }
+	.v ## _s > :first-child { margin-top: 0; } \
 
 #define TABLE_VERTICAL(_s) \
 	table.v ## _s { border-spacing: 0 S(_s); border-collapse: separate; } \
@@ -35,6 +35,7 @@
 .f.c { align-items: center; }
 
 .f { display: flex !important; }
+.f.v0 { flex-direction: column; }
 .fg { flex-grow: 1; }
 .fg- { flex-grow: 0 !important; }
 .fgc > * { flex-grow: 1; }

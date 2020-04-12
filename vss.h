@@ -1,5 +1,4 @@
 #include "utils.h"
-#include "autoconfig.h"
 
 #include "t.h"
 #include "s.h"
@@ -27,10 +26,6 @@
 #include "size.h"
 #include "alignment.h"
 
-#ifdef CONFIG_FIXED
-#include "fixed.h"
-#endif
-
 #ifdef CONFIG_ROUND
 #include "round.h"
 #endif
@@ -43,3 +38,36 @@ input, textarea { padding: 6px CONFIG_IPH; }
 
 input, textarea { color: C_black; }
 .click { cursor: pointer; user-select: none; }
+.hid { display: none !important; }
+body { margin: 0 }
+/* table { width: 100%; } */
+* {
+	font-family: inherit;
+	/* font-weight: inherit; */
+}
+button {
+	color: C_black;
+	background-color: C_pri;
+	border: none;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+	border-radius: S_s !important;
+	position: relative;
+}
+button::after {
+	content: '';
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	border-radius: S_s;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	position: absolute;
+	/* z-index: -1; */
+	/* width: 100%; */
+	/* height: 100%; */
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+button:not(:disabled):hover::after {
+	opacity: 1;
+}
