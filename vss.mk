@@ -10,7 +10,7 @@ $(vss-out): ./t.h ./c.h ./vss.config.h
 	gcc ${vss-CFLAGS-y} -E -P -nostdinc -undef -x c ./vss.config.h > $@
 
 ./t.h:
-	${vss-path}/bin/t > $@
+	${vss-path}/bin/t ${vss-t-args} > $@
 
 ./c.h:
 	${vss-path}/bin/c ${vss-color} > $@
