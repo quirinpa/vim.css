@@ -20,6 +20,7 @@ static skv colors[] = {
 	{ "emerald", "#00d170" }, // greenBlue
 	{ "periwinkle", "#dbdee3" }, // lightPeriwinkle
 	{ "lgrey", "#cccdd5" }, // lightBlueGrey
+	{ "red", "#d10000" }, // does not exist in styleguide
 };
 static const int l = sizeof(colors) / sizeof(skv);
 

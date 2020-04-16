@@ -15,7 +15,9 @@
 #define SIZE(_s) \
 	.sv ## _s, .s ## _s { height: S(_s); } \
 	.sh ## _s, .s ## _s { width: S(_s); } \
-	.st ## _s { line-height: S(_s); }
+	.st ## _s { line-height: S(_s); } \
+	.sKh ## _s { max-width: S(_s); } \
+	.sKv ## _s { max-height: S(_s); }
 
 #define PADDING(_s) \
 	.p ## _s { padding: S(_s); } \

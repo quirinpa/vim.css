@@ -42,6 +42,8 @@
 #define VARS_14(W, a, ...) VAR(W, a) VARS_13(W, __VA_ARGS__)
 #define VARS_15(W, a, ...) VAR(W, a) VARS_14(W, __VA_ARGS__)
 #define VARS_16(W, a, ...) VAR(W, a) VARS_15(W, __VA_ARGS__)
+#define VARS_17(W, a, ...) VAR(W, a) VARS_16(W, __VA_ARGS__)
+#define VARS_18(W, a, ...) VAR(W, a) VARS_17(W, __VA_ARGS__)
 #define VAR(W, a) --W ## a: W ## _ ## a;
 
 #define CALL(D, ...) CAT(CALL_, COUNT(__VA_ARGS__))(D, __VA_ARGS__)
@@ -83,6 +85,7 @@
 #define READ_15(W, a, ...) CAT(W, a), READ_14(W, __VA_ARGS__)
 #define READ_16(W, a, ...) CAT(W, a), READ_15(W, __VA_ARGS__)
 #define READ_17(W, a, ...) CAT(W, a), READ_16(W, __VA_ARGS__)
+#define READ_18(W, a, ...) CAT(W, a), READ_17(W, __VA_ARGS__)
 #endif
 
 #endif

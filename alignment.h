@@ -40,12 +40,20 @@
 .fg- { flex-grow: 0 !important; }
 .fgc > * { flex-grow: 1; }
 
-.fa.K { align-self: flex-start; }
-.fa.J { align-self: flex-end; }
+/* .fic { align-items: center; } */
+.fis { align-items: stretch; }
+.fiK { align-items: flex-start; }
+.fiJ { align-items: flex-end; }
+
+.fcc { justify-content: center; }
+.fcK { justify-content: flex-start; }
+.fcJ { justify-content: flex-end; }
+
+.faK { align-self: flex-start; }
+.faJ { align-self: flex-end; }
 
 .rel { position: relative; }
 .abs { position: absolute; }
-.abs.cv { top: 50%; }
 .abs.H { left: 0; }
 .abs.J { bottom: 0; }
 .abs.K { top: 0; }
