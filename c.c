@@ -1,46 +1,69 @@
 #include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
 
-typedef char *skv[2];
-
-static skv colors[] = {
-	{ "pri", "#d1005d" }, // deepPink
-	{ "blue", "#1654ff" }, // azul
-	{ "dblue", "#1c3dcc" }, // blueBlue
-	{ "coral", "#ff4444" },
-	{ "xlgrey", "#f0f0f0" }, // veryLightPink
-	{ "midnight", "#030830" },
-	{ "grey", "#a8aab8" }, // lightGreyBlue
-	{ "sun", "#ffd81c" }, // sunYellow
-	{ "turquoise", "#00c1c5" }, // turquoiseBlue
-	{ "palegrey", "#f5f5f7" }, // <remove>
-	{ "white", "white" },
-	{ "black", "black" },
-	/* { "white48", "rgba(255, 255, 255, 0.48)" }, */
-	{ "violet", "#5411dd" }, // violetBlue
-	{ "emerald", "#00d170" }, // greenBlue
-	{ "periwinkle", "#dbdee3" }, // lightPeriwinkle
-	{ "lgrey", "#cccdd5" }, // lightBlueGrey
-	{ "red", "#d10000" }, // does not exist in styleguide
+enum mode_t {
+	M_KEY,
+	M_VALUE,
+	M_COMMENT,
 };
-static const int l = sizeof(colors) / sizeof(skv);
 
-int main() {
-	int i = 0;
+int main(int argc, char *argv[]) {
+	if (argc < 2)
+		return 1;
 
-	printf("#ifndef CS_H\n#define CS_N %d\n#define CS ", l);
-	for (;;) {
-		printf("%s", colors[i][0]);
+	int fd = open(argv[1], O_RDONLY);
+
+	if (fd < 1)
+		return 1;
+
+	char buf[1024], *buf_p = buf, *key_start = buf;
+	char *keys[32];
+
+	ssize_t buf_l = read(fd, buf, sizeof(buf));
+	size_t keys_l = 0;
+
+	int i, mode = M_KEY;
+
+	printf("#ifndef CS_N\n#define C");
+	for (; buf_p < buf + buf_l; buf_p ++) {
+		switch (*buf_p) {
+			case '\n':
+				putchar('\n');
+				printf("#define C");
+				key_start = buf_p + 1;
+				mode = M_KEY;
+				continue;
+
+			case ' ':
+				if (mode == M_KEY) {
+					*buf_p = '\0';
+					keys[keys_l] = key_start;
+					keys_l ++;
+					putchar(' ');
+					mode = M_VALUE;
+					continue;
+				}
+
+				mode = M_VALUE;
+
+			default:
+				if (mode == M_KEY && buf_p == key_start)
+					putchar('_');
+
+				putchar(*buf_p);
+		}
+	}
+
+	printf("S_N %d\n#define CS ", keys_l);
+	for (i = 0;;) {
+		printf("%s", keys[i]);
 		i++;
-		if (i >= l)
+		if (i >= keys_l)
 			break;
 		printf(", ");
 	}
-	putchar('\n');
-
-	for (i = 0; i < l; i++)
-		printf("#define C_%s %s\n", colors[i][0], colors[i][1]);
-
-	printf("#endif\n");
+	printf("\n#endif\n");
 
 	return 0;
 }

@@ -2,6 +2,7 @@ gcc-vss := gcc ${CFLAGS} -E -P -nostdinc -undef -x c
 vss-path ?= .
 vss-dirs := bin
 vss-out ?= vim.css
+vss-color ?= c.txt
 vss-CFLAGS-y := -I${srcdir} -I${vss-path}
 # vss-exe := t c
 vss-clean-y := ./t.h ./c.h ./bin/t ./bin/c ${vss-out}
@@ -16,7 +17,7 @@ $(vss-dirs):
 	./bin/t > $@
 
 ./c.h: ./bin/c ${vss-path}/c.c
-	./bin/c > $@
+	./bin/c ${vss-color} > $@
 
 ./bin/t: ${vss-path}/t.c
 	cc ${vss-path}/t.c -o $@
