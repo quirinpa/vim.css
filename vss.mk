@@ -1,29 +1,19 @@
 gcc-vss := gcc ${CFLAGS} -E -P -nostdinc -undef -x c
 vss-path ?= .
-vss-dirs := bin
 vss-out ?= vim.css
 vss-color ?= c.txt
 vss-CFLAGS-y := -I${srcdir} -I${vss-path}
 # vss-exe := t c
 vss-clean-y := ./t.h ./c.h ./bin/t ./bin/c ${vss-out}
 
-$(vss-out): ${vss-dirs} ./t.h ./c.h ./vss.config.h
+$(vss-out): ./t.h ./c.h ./vss.config.h
 	gcc ${vss-CFLAGS-y} -E -P -nostdinc -undef -x c ./vss.config.h > $@
 
-$(vss-dirs):
-	mkdir -p $@
+./t.h:
+	${vss-path}/bin/t > $@
 
-./t.h: ./bin/t ${vss-path}/t.c
-	./bin/t > $@
-
-./c.h: ./bin/c ${vss-path}/c.c
-	./bin/c ${vss-color} > $@
-
-./bin/t: ${vss-path}/t.c
-	cc ${vss-path}/t.c -o $@
-
-./bin/c: ${vss-path}/c.c
-	cc ${vss-path}/c.c -o $@
+./c.h:
+	${vss-path}/bin/c ${vss-color} > $@
 
 clean:
 	-rm ${vss-clean-y} >/dev/null 2>&1

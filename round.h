@@ -9,12 +9,6 @@
 	box-sizing: border-box;
 }
 
-#define ROUND_TEXT(_t) \
-	.round.t ## _t { \
-		line-height: T_ ## _t; \
-		width: T_ ## _t; \
-	}
-
 #define ROUND_PADDING(_p, _t) \
 	.p ## _p.round.t ## _t { \
 		line-height: T_ ## _t; \
@@ -22,7 +16,7 @@
 	}
 
 #define ROUND_T(_t) \
-	round.t ## _t { \
+	.round.t ## _t { \
 		line-height: T_ ## _t; \
 		width: calc(T_ ## _t); \
 	}
