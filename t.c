@@ -1,19 +1,23 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 
 static char *label[] = { "xs", "s", "", "m", "ml", "l", "xl", "xxl", "Xl", "xXl", "Xxl", "XXl", "L" };
 static const int l = sizeof(label) / sizeof(char *);
 
 static float f(float x, float a, float b, float c, float d) {
-	return ((((a * x) - b) * x) + c) * x + d;
+	return ((((a * x) + b) * x) + c) * x + d;
 }
 
+extern int opterr;
+
 int main(int argc, char *argv[]) {
-	float a = 0.113f, b = 0.6f, c = 4, d = 6, m = 0.87f;
+	float a = 0.113f, b = -0.6f, c = 4, d = 6, m = 0.87f;
 	int i = 0;
 	char name_ch = 'T', ch;
 
-	while ((ch = getopt(argc, argv, "abcdm:")) != -1) {
+	opterr = 0;
+	while ((ch = getopt(argc, argv, "a::b::c::d::m::")) != -1) {
 		switch (ch) {
 			case 'a':
 				sscanf(optarg, "%f", &a);
@@ -40,7 +44,7 @@ int main(int argc, char *argv[]) {
 
 	printf(
 		"/* x = i * %.3f; f(x) = %.3f * x ^ 3"
-		" - %.3f * x ^ 2 + %.3f * x + %.3f */\n\n",
+		" + %.3f * x ^ 2 + %.3f * x + %.3f */\n\n",
 		m, a, b, c, d
 	);
 
