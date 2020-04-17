@@ -142,3 +142,24 @@ xXs, Xs, xxs, xs, s, , xl, xxl, Xl
 The corresponding values are:
 
 100, 200, 300, 400, 500, 600, 700, 800 and 900
+
+So an element with the "tb" class would have bold text and "txs" would have regular weighted text.
+
+## Colors
+Colors are generated based on the configuration file /vim-css/c.txt.
+
+### COLOR(\<color\>)
+> .C\<color\>
+Sets an element's color to the one specified.
+
+### BG\_COLOR(\<color\>)
+> .c\<color\>
+Sets an element's background color to the one specified.
+
+### BO\_COLOR(\<color\>)
+> .B\<direction\>\<color\>
+Sets the border to the specified color.
+
+Direction is specified using:
+
+H, J, K, L
