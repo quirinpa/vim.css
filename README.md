@@ -1,8 +1,10 @@
 # Description
 
 This is a css framework that uses some concepts I've learned from the VIM editor.
-If you don't mind using make (POSIX) in your project, you can change configuration,
-otherwise you can download a pre-configured vim.css.
+
+If you don't mind using make (POSIX) in your project, you can change configuration.
+
+Otherwise you can just download a pre-configured vim.css.
 
 # Example markup
 
@@ -169,4 +171,5 @@ Direction is specified using:
 H, J, K, L
 
 Which means left, bottom, top and right, just like in VIM.
+
 If you don't specify a direction, then all directions are assumed.
