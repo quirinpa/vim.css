@@ -119,9 +119,9 @@ vss-t-args := -a0.112 -b-0.61 -c3.9 -d6.1 -m0.88
 This allows you to customize these values.
 
 ### TEXT\_SIZE(\<text size\>)
-> t\<text size\>
+> .t\<text size\>
 
-> th\<text size\>
+> .th\<text size\>
 
 If you look at the example index.html, you can see round thing also has a "tl" class.
 This means that this text results in the size corresponding to the l label. l is indexed 5 in TS.
@@ -130,13 +130,13 @@ And so x would be m * 5. In this example, y would eventually result in the font 
 The th command sets line height.
 
 ### ROUND\_T(\<text size\>)
-> t\<text size\>.round
+> .t\<text size\>.round
 
 Say we wanted an element that is round and that features a single character, of the size specified.
 This is possible using this macro, as long there is no extra padding (for that, there is ROUND\_PADDING).
 
 ### bold levels
-> tb\<bold level\>
+> .tb\<bold level\>
 
 The tb command sets the bold level of an element. Bold levels' labels are:
 
