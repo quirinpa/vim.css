@@ -163,3 +163,7 @@ Sets the border to the specified color.
 Direction is specified using:
 
 H, J, K, L
+
+That correspond to the directions:
+
+left, bottom, top and right, just like VIM.
