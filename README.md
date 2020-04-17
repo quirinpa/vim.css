@@ -166,10 +166,32 @@ Sets an element's background color to the one specified.
 
 Sets the border to the specified color.
 
-Direction is specified using:
+**Direction** is specified using:
 
 H, J, K, L
 
 Which means left, bottom, top and right, just like in VIM.
 
 If you don't specify a direction, then all directions are assumed.
+
+## Size
+Size uses the formula:
+
+![2^x](https://render.githubusercontent.com/render/math?math=y%3D2%5E{x+1}.)
+
+Its labels are:
+
+xxs, xs, s, , m, l, xl, xxl, Xl
+
+Which correspond to:
+
+2, 4, 8, 16, 24, 32, 64, 128 and 256.
+
+### SIZE(\<size\>)
+> .s\<direction\>\<axis\>\<size\>
+
+Asix might be horizontal (h) or vertical (v). This parameter is the only one that is required.
+
+Direction in this case is used to indicate minimum (J) and maximum (K) sizes in that axis.
+
+Size may additionally be 100% (f) or 100% of the view in that axis (fv).
