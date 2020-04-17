@@ -43,9 +43,9 @@ Produces:
 
 ![Example screenshot](https://raw.githubusercontent.com/quirinpa/vim.css/master/example.png)
 
-# Use it in your project
+# Excample configuration
 
-First, clone this repo:
+Imagine you clone this repo to your home folder:
 ```sh
 cd ~
 git clone git@github.com:quirinpa/vim.css.git
@@ -53,9 +53,6 @@ git clone git@github.com:quirinpa/vim.css.git
 
 Then, in your project root (copy and paste):
 ```sh
-cd ~
-git clone git@github.com:quirinpa/vim.css.git
-cd $MY_PROJECT_ROOT
 mkdir vss
 cat - > vss/vss.config.h <<!
 #define CONFIG_IPH 12px
