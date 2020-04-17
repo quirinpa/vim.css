@@ -118,6 +118,7 @@ This allows you to customize these values.
 
 ### TEXT\_SIZE(\<text size\>)
 > t\<text size\>
+
 > th\<text size\>
 
 If you look at the example index.html, you can see round thing also has a "tl" class.
@@ -150,14 +151,17 @@ Colors are generated based on the configuration file /vim-css/c.txt.
 
 ### COLOR(\<color\>)
 > .C\<color\>
+
 Sets an element's color to the one specified.
 
 ### BG\_COLOR(\<color\>)
 > .c\<color\>
+
 Sets an element's background color to the one specified.
 
 ### BO\_COLOR(\<color\>)
 > .B\<direction\>\<color\>
+
 Sets the border to the specified color.
 
 Direction is specified using:
