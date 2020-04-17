@@ -164,6 +164,5 @@ Direction is specified using:
 
 H, J, K, L
 
-That correspond to the directions:
-
-left, bottom, top and right, just like VIM.
+Which means left, bottom, top and right, just like in VIM.
+If you don't specify a direction, then all directions are assumed.l
