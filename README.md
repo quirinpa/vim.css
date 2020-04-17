@@ -120,6 +120,7 @@ vss-t-args := -a0.112 -b-0.61 -c3.9 -d6.1 -m0.88
 This allows you to customize these values.
 
 ### TEXT\_SIZE
+> t\<text size\>
 
 If you look at the example index.html, you can see round thing also has a "tl" class.
 This means that this text results in the size corresponding to the l label. l is indexed 5 in TS.
