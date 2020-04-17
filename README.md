@@ -45,8 +45,13 @@ Produces:
 
 # Use it in your project
 
-Copy and paste this to a terminal to get started using vim.css.
+First, clone this repo:
+```sh
+cd ~
+git clone git@github.com:quirinpa/vim.css.git
+```
 
+Then, in your project root (copy and paste):
 ```sh
 cd ~
 git clone git@github.com:quirinpa/vim.css.git
@@ -73,7 +78,7 @@ main { color: C_black !important; }
 
 cat - > vss/Makefile <<!
 srcdir := .
-vss-path := \${HOME}/vss
+vss-path := \${HOME}/vim.css
 vss-t-args := -a0.112 -b-0.61 -c3.9 -d6.1 -m0.88
 include \${vss-path}/vss.mk
 !
@@ -92,6 +97,17 @@ printf "vss:\n\t\${MAKE} -C \$@\n.PHONY: vss\n" > Makefile
 
 Hitting "make" on your project root would create /vim.css, then you just need include it in your html.
 
-# Commands
+# Concepts
 
-This is under construction
+## Text sizes
+
+Text sizes are generated using a third degree polynomial:
+
+![Example screenshot](https://render.githubusercontent.com/render/math?math=y = a * x^3 + b * x^2 + c * x + d.)
+
+Where x is the index of the font size. Its labels are:
+
+xs, s, , m, ml, l, xl, xxl, Xl, xXl, Xxl, XXl, L
+
+And before feeding it to the polynomial, x is multiplied by m.
+
