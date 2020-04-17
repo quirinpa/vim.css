@@ -49,7 +49,7 @@ vss:
 	${MAKE} -C $@
 .PHONY: vss
 !
-```sh
+```
 
 Hit "make" on your project root to prepare vim.css, and then just include it in your html.
 
