@@ -179,7 +179,7 @@ Size uses the formula:
 
 ![2^x](https://render.githubusercontent.com/render/math?math=y%3D2%5E{x%2B1}.)
 
-Its labels are:
+Where x is the index of the label intended, of the possible:
 
 xxs, xs, s, , m, l, xl, xxl, Xl
 
