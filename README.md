@@ -177,7 +177,7 @@ If you don't specify a direction, then all directions are assumed.
 ## Size
 Size uses the formula:
 
-![2^x](https://render.githubusercontent.com/render/math?math=y%3D2%5E{x+1}.)
+![2^x](https://render.githubusercontent.com/render/math?math=y%3D2%5E{x%2B1}.)
 
 Its labels are:
 
