@@ -39,7 +39,8 @@ Consider the following example index.html.
 </html>
 ```
 
-Renders as:
+Produces:
+
 ![Example screenshot](https://raw.githubusercontent.com/quirinpa/vim.css/master/example.png)
 
 # Use it in your project
