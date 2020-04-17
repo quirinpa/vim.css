@@ -190,8 +190,8 @@ Which correspond to:
 ### SIZE(\<size\>)
 > .s\<direction\>\<axis\>\<size\>
 
-Axis might be horizontal (h) or vertical (v). This parameter is the only one that is required.
+**Axis** might be horizontal (h) or vertical (v). This parameter is the only one that is required.
 
-Direction in this case is used to indicate minimum (J) and maximum (K) sizes in that axis.
+**Direction** in this case is used to indicate minimum (J) and maximum (K) sizes in that axis.
 
-Size may additionally be 100% (f) or 100% of the view in that axis (fv).
+**Size** may additionally be 100% (f) or 100% of the view in that axis (fv).
