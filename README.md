@@ -58,7 +58,6 @@ cat - > vss/vss.config.h <<!
 #define CONFIG_IPH 12px
 #define CONFIG_ROUND
 #include "vss.h"
-
 CALL(TEXT_SIZE, TS)
 CALL(BG_COLOR, CS)
 CALL(COLOR, CS)
@@ -72,7 +71,6 @@ CALL(ROUND_T, SS)
 ROUND_PADDING( , l)
 main { color: C_black !important; }
 !
-
 cat - > vss/Makefile <<!
 srcdir := .
 vss-path := \${HOME}/vim.css
