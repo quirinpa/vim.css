@@ -103,7 +103,7 @@ Hitting "make" on your project root would create /vim.css, then you just need in
 
 Text sizes are generated using a third degree polynomial:
 
-![3 polynomial](https://render.githubusercontent.com/render/math?math=y=a*x^3+b*x^2+c*x+d.)
+![3 polynomial](https://render.githubusercontent.com/render/math?math=y%3Da%2Ax%5E3%2Bb%2Ax%5E2%2Bc%2Ax%2Bd.)
 
 Where x is the index of the font size. Its labels are:
 
