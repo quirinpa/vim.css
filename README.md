@@ -190,7 +190,7 @@ Which correspond to:
 ### SIZE(\<size\>)
 > .s\<direction\>\<axis\>\<size\>
 
-Asix might be horizontal (h) or vertical (v). This parameter is the only one that is required.
+Axis might be horizontal (h) or vertical (v). This parameter is the only one that is required.
 
 Direction in this case is used to indicate minimum (J) and maximum (K) sizes in that axis.
 
