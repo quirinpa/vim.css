@@ -149,7 +149,7 @@ The corresponding values are:
 So an element with the "tb" class would have bold text and "txs" would have regular weighted text.
 
 ## Colors
-Colors are generated based on the configuration file /vim-css/c.txt.
+Colors are generated based on the configuration file /vss/c.txt.
 
 ### COLOR(\<color\>)
 > .C\<color\>
