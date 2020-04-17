@@ -43,7 +43,7 @@ Produces:
 
 ![Example screenshot](https://raw.githubusercontent.com/quirinpa/vim.css/master/example.png)
 
-# Excample configuration
+# Example configuration
 
 Imagine you clone this repo to your home folder:
 ```sh
@@ -165,4 +165,4 @@ Direction is specified using:
 H, J, K, L
 
 Which means left, bottom, top and right, just like in VIM.
-If you don't specify a direction, then all directions are assumed.l
+If you don't specify a direction, then all directions are assumed.
