@@ -12,14 +12,15 @@ Consider the following example index.html.
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="vim.css">
 	</head>
-	<body class="v f p cpri sfv">
-		<header class="h c">
-			<a class="round cred p tl" href="help.txt">?</a>
-			<span>vim.css example</span>
+	<body class="v0 f cblack sfv">
+		<header class="h c p">
+			<a class="round cgrey p tl" href="help.txt">?</a>
+			<h1>vim.css example</h1>
 		</header>
-		<main class="v fg cwhite">
+		<main class="v fg p cwhite">
 			<div>
 				My parent grows to fill the remaining
 				space of the screen.
@@ -30,8 +31,8 @@ Consider the following example index.html.
 				to each other.
 			</div>
 			<div class="hs">
-				<span>We are rendered horizontally<span>
-				<span>And have 8px separations<span>
+				<span class="tb">We are rendered horizontally</span>
+				<span>And have 8px separations</span>
 			</div>
 		</main>
 	</body>
@@ -63,14 +64,17 @@ CALL(SIZE, SS)
 CALL(PADDING, SS)
 CALL(HORIZONTAL, SS)
 CALL(VERTICAL, SS)
+CALL(FLEX_VERTICAL, SS)
 CALL(ROUND_T, SS)
+ROUND_PADDING( , l)
+main { color: C_black !important; }
 !
+
 cat - > vss/Makefile <<!
 srcdir := .
-vss-path := ${HOME}/vss # for example
-vss-out := ../vim.css
-vss-t-args := -a0.113 -b-0.6 -c4 -d6 -m0.87
-include ${vss-path}/vss.mk
+vss-path := \${HOME}/vss
+vss-t-args := -a0.112 -b-0.61 -c3.9 -d6.1 -m0.88
+include \${vss-path}/vss.mk
 !
 cat - > vss/c.txt <<!
 pri cyan
@@ -82,14 +86,10 @@ lgrey #aaa
 red red
 !
 printf "/vss/t.h\n/vss/c.h" >> .gitignore
-cat - > Makefile <<!
-vss:
-	${MAKE} -C $@
-.PHONY: vss
-!
+printf "vss:\n\t\${MAKE} -C \$@\n.PHONY: vss\n" > Makefile
 ```
 
-Hit "make" on your project root to prepare vim.css, and then just include it in your html.
+Hitting "make" on your project root would create /vim.css, then you just need include it in your html.
 
 # Commands
 
