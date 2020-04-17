@@ -105,9 +105,22 @@ Text sizes are generated using a third degree polynomial:
 
 ![3 polynomial](https://render.githubusercontent.com/render/math?math=y%3Da%2Ax%5E3%2Bb%2Ax%5E2%2Bc%2Ax%2Bd.)
 
-Where x is the index of the font size. Its labels are:
+Where x = i * m, where i is the index of the font size.
 
-xs, s, , m, ml, l, xl, xxl, Xl, xXl, Xxl, XXl, L
+The following labels apply to font sizes (for now, this is not customizable):
+```h
+#define TS xs, s, , m, ml, l, xl, xxl, Xl, xXl, Xxl, XXl, L
+```
 
-And before feeding it to the polynomial, x is multiplied by m.
+If you look above you see a line like such, in vss's Makefile:
+```make
+vss-t-args := -a0.112 -b-0.61 -c3.9 -d6.1 -m0.88
+```
 
+This allows you to customize these values.
+
+### TEXT\_SIZE
+
+If you look at the example index.html, you can see round thing also has a "tl" class.
+This means that this text results in the size corresponding to the l label. l is indexed 5 in TS.
+And so x would be m * 5. In this example, y would eventually result in the font size of 38.5px.
