@@ -123,17 +123,16 @@ Text sizes are a parameter. They are generated using a third degree polynomial:
 
 Where x = i * m, where i is the index of the font size.
 
+If you look at the /vss/Makefile exemplified, you see:
+```make
+vss-t-args := -a0.112 -b-0.61 -c3.9 -d6.1 -m0.88
+```
+This allows you to specify these values.
+
 The following labels apply to font sizes (for now, this is not customizable):
 ```h
 #define TS xs, s, , m, ml, l, xl, xxl, Xl, xXl, Xxl, XXl, L
 ```
-
-If you look above you see a line like such, in vss's Makefile:
-```make
-vss-t-args := -a0.112 -b-0.61 -c3.9 -d6.1 -m0.88
-```
-
-This allows you to customize these values.
 
 ## TEXT\_SIZE(\<text size\>)
 > .t\<text size\>
