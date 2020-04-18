@@ -202,7 +202,7 @@ Which correspond to:
 Adds padding to an element.
 
 ### ABS\_PADDING(\<size\>)
-> .rel.p\<axis/direction\>\<size\> \> .abs \<direction\>
+> .rel.p\<axis/direction\>\<size\> \> .abs.\<direction\>
 
 Positions an element close to the edge of the parent element in the
 specified direction, taking into consideration the size of it's padding.
