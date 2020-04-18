@@ -224,8 +224,52 @@ an element with the specified padding.
 
 WIP
 
+## Alignment
+
 ### MARGIN(\<size\>)
 > .m\<direction\>\<size\>
 
 Margins are **not recommended**. In my experience, using "v", "h" usually works,
 and it produces markup that is easier to read (less specific stuff).
+
+### HORIZONTAL(\<size\>)
+> .h\<size\>
+
+This makes it so that an element's children are displayed horizontally, separated
+by the size specified.
+
+### VERTICAL(\<size\>)
+> .v\<size\>
+
+The same, but for displaying children vertically.
+
+The size may aditionally be "0".
+
+### SPLIT\_HORIZONTAL(\<size\>)
+> .x.h\<size\>
+
+Indicates that an "h" element should be split in half.
+
+### WRAP(\<size\>)
+> .w\<size\>
+
+Flex-wrap version of "h".
+
+Props to mister Rubens Almeida for coming up with the first version.
+
+### Others
+> .f
+
+Combine with "h" and "v" to indicate a flex element with those caracteristics.
+
+> .c
+
+Combine with "h" and optionally "f" to center vertically.
+
+> .fg
+
+Indicates that a child of a flex element should grow.
+
+> .fgc
+
+Indicates that all children of the flex element should grow.
