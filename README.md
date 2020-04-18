@@ -99,13 +99,11 @@ Hitting "make" on your project root would create /vim.css, then you just need in
 # Key Concepts
 
 **Commands** are usually the first letter of many of the classes of vim.css.
-They specify the category upon which to act, or what to do.
-Commands may have two letters. In this case they also specify the operation to perform.
-There are exemptions, commands of a single letter that perform operations, and ones
-that are meant to be combined with others.
+They specify the category upon which to act, or what operation to perform.
+Commands may have two letters. In this case they specify both.
+There are also commands that are only meant to be combined with others.
 
 **Command parameters** use labels to specify values for commands.
-
 If you omit a parameter either a default value is used, or all values are assumed.
 
 The following sections are separated by category. The titles of their sub-sections
