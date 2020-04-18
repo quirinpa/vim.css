@@ -96,17 +96,34 @@ printf "vss:\n\t\${MAKE} -C \$@\n.PHONY: vss\n" > Makefile
 
 Hitting "make" on your project root would create /vim.css, then you just need include it in your html.
 
-# Concepts
+# Key Concepts
 
-## Commands
+**Commands** are usually the first letter of many of the classes of vim.css.
+They specify the category upon which to act, or what to do.
 
-What I call "commands" is basically the first letter of many of the classes of vim.css.
+Commands of a single letter usually relate to size of some sort.
 
-They specify what to do, or what to act upon.
+Sometimes commands have two letters, in this case they usually represent
+the category upon which to act followed by the operation to perform.
 
-## Text
+There are also commands that are meant to be combined with others.
 
-Text sizes are generated using a third degree polynomial:
+**Command parameters** use labels to specify values for commands.
+
+If you omit a parameter either a default value is used, or all values are assumed.
+
+The following sections are separated by category. The titles of their sub-sections
+are usually gcc preprocessor macros. They receive parameters as arguments and generate
+commands:
+> .like.this\<parameter\>
+
+You don't have to know all the commands, knowing only a few can go a long way.
+
+On to the details.
+
+# Text
+
+Text sizes are a parameter. They are generated using a third degree polynomial:
 
 ![3 polynomial](https://render.githubusercontent.com/render/math?math=y%3Da%2Ax%5E3%2Bb%2Ax%5E2%2Bc%2Ax%2Bd.)
 
@@ -124,7 +141,7 @@ vss-t-args := -a0.112 -b-0.61 -c3.9 -d6.1 -m0.88
 
 This allows you to customize these values.
 
-### TEXT\_SIZE(\<text size\>)
+## TEXT\_SIZE(\<text size\>)
 > .t\<text size\>
 
 > .th\<text size\>
@@ -135,13 +152,13 @@ And so x would be m * 5. In this example, y would eventually result in the font 
 
 The th command sets line height.
 
-### ROUND\_T(\<text size\>)
+## ROUND\_T(\<text size\>)
 > .t\<text size\>.round
 
 Say we wanted an element that is round and that features a single character, of the size specified.
 This is possible using this macro, as long there is no extra padding (for that, there is ROUND\_PADDING).
 
-### bold levels
+## bold levels
 > .tb\<bold level\>
 
 The tb command sets the bold level of an element. Bold levels' labels are:
@@ -154,20 +171,20 @@ The corresponding values are:
 
 So an element with the "tb" class would have bold text and "txs" would have regular weighted text.
 
-## Colors
+# Colors
 Colors are generated based on the configuration file /vss/c.txt.
 
-### COLOR(\<color\>)
+## COLOR(\<color\>)
 > .C\<color\>
 
 Sets an element's color to the one specified.
 
-### BG\_COLOR(\<color\>)
+## BG\_COLOR(\<color\>)
 > .c\<color\>
 
 Sets an element's background color to the one specified.
 
-### BO\_COLOR(\<color\>)
+## BO\_COLOR(\<color\>)
 > .B\<direction\>\<color\>
 
 Sets the border to the specified color.
@@ -180,7 +197,7 @@ Which means left, bottom, top and right, just like in VIM.
 
 If you don't specify a direction, then all directions are assumed.
 
-## Size
+# Size
 Size uses the formula:
 
 ![2^x](https://render.githubusercontent.com/render/math?math=y%3D2%5E{x%2B1}.)
@@ -193,7 +210,7 @@ Which correspond to:
 
 2, 4, 8, 16, 24, 32, 64, 128 and 256.
 
-### SIZE(\<size\>)
+## SIZE(\<size\>)
 > .s\<direction\>\<axis\>\<size\>
 
 **Direction** in this case is used to indicate minimum (J) and maximum (K) sizes in that axis.
@@ -202,66 +219,66 @@ Which correspond to:
 
 **Size** may additionally be 100% (f) or 100% of the view in that axis (fv).
 
-### PADDING(\<size\>)
+## PADDING(\<size\>)
 > .p\<direction/axis\>\<size\>
 
 Adds padding to an element.
 
-### ABS\_PADDING(\<size\>)
+## ABS\_PADDING(\<size\>)
 > .rel.p\<axis/direction\>\<size\> \> .abs.\<direction\>
 
 Positions an element close to the edge of the parent element in the
 specified direction, taking into consideration the size of it's padding.
 
-### CENTER\_ABS\_V(\<size\>)
+## CENTER\_ABS\_V(\<size\>)
 > .abs.sv\<size\>
 
 Vertically centers an absolutely positioned element of known size.
 
-### CENTER\_ABS\_VP(\<size\>,\<paddingK\>,\<paddingJ\>)
+## CENTER\_ABS\_VP(\<size\>,\<paddingK\>,\<paddingJ\>)
 > .pK\<paddingK\>.pJ\<paddingJ\> > .abs.sv\<size\>
 
 Vertically centers an absolutely positioned element of known size, inside
 an element with the specified padding.
 
-### TABLE\_PADDING(\<size\>)
+## TABLE\_PADDING(\<size\>)
 
 WIP
 
-### MARGIN(\<size\>)
+## MARGIN(\<size\>)
 > .m\<direction\>\<size\>
 
 Margins are **not recommended**. In my experience, using "v", "h" usually works,
 and it produces markup that is easier to read (less specific stuff).
 
-## Alignment
+# Alignment
 
-### HORIZONTAL(\<size\>)
+## HORIZONTAL(\<size\>)
 > .h\<size\>
 
 This makes it so that an element's children are displayed horizontally, separated
 by the size specified.
 
-### VERTICAL(\<size\>)
+## VERTICAL(\<size\>)
 > .v\<size\>
 
 The same, but for displaying children vertically.
 
 The size may aditionally be "0".
 
-### SPLIT\_HORIZONTAL(\<size\>)
+## SPLIT\_HORIZONTAL(\<size\>)
 > .x.h\<size\>
 
 Indicates that an "h" element should be split in half.
 
-### WRAP(\<size\>)
+## WRAP(\<size\>)
 > .w\<size\>
 
 Flex-wrap version of "h".
 
 Props to mister Rubens Almeida for coming up with the first version.
 
-### Others
+## Others
 > .f
 
 Combine with "h" and "v" to indicate a flex element with those caracteristics.
@@ -278,32 +295,32 @@ Indicates that a child of a flex element should grow.
 
 Indicates that all children of the flex element should grow.
 
-## Round
+# Round
 
 You can add the .round class to make an element round.
 
 Discussed here is also the "r" command which also relates to border radius.
 
-### ROUND\_T(\<text size\>)
+## ROUND\_T(\<text size\>)
 > .round.t\<text size\>
 
 Adds support for round things that have a single character of the specified size.
 
-### ROUND\_PADDING(\<padding size\>, \<text size\>)
+## ROUND\_PADDING(\<padding size\>, \<text size\>)
 > .p\<padding size\>.round.t\<text size\>
 
 The same as above but taking padding into account.
 
-### ROUND\_EDGE(\<size\>)
+## ROUND\_EDGE(\<size\>)
 > .r\<direction\>\<size\>
 
 Sets the border radius of the element in the specified direction.
 
 You can combine vertical and horizontal directions (in that order), or omit it completely, as you would expect.
 
-## Utility
+# Utility
 
-### HOVER\_SHADOW(\<selector\>,\<shadow\>,\<ease\>,\<other\>)
+## HOVER\_SHADOW(\<selector\>,\<shadow\>,\<ease\>,\<other\>)
 
 Add properties to a selector so that it displays a growing shadow on hover
 using the ::after pseudo-selector as described here:
