@@ -100,7 +100,7 @@ Hitting "make" on your project root would create /vim.css, then you just need in
 
 ## Commands
 
-## Text sizes
+## Text
 
 Text sizes are generated using a third degree polynomial:
 
