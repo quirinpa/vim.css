@@ -2,6 +2,8 @@
 
 This is a css framework that uses some concepts I've learned from the VIM editor.
 
+I find that just like in VIM, once you understand it, it speeds up development and improves the result.
+
 If you don't mind using make (POSIX) in your project, you can change configuration.
 
 Otherwise you can just download a pre-configured vim.css.
