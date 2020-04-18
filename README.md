@@ -100,6 +100,10 @@ Hitting "make" on your project root would create /vim.css, then you just need in
 
 ## Commands
 
+What I call "commands" is basically the first letter of many of the classes of vim.css.
+
+They specify what to do, or what to act upon.
+
 ## Text
 
 Text sizes are generated using a third degree polynomial:
@@ -192,9 +196,9 @@ Which correspond to:
 ### SIZE(\<size\>)
 > .s\<direction\>\<axis\>\<size\>
 
-**Axis** might be horizontal (h) or vertical (v). This parameter is the only one that is required.
-
 **Direction** in this case is used to indicate minimum (J) and maximum (K) sizes in that axis.
+
+**Axis** might be horizontal (h) or vertical (v). This parameter is the only one that is required.
 
 **Size** may additionally be 100% (f) or 100% of the view in that axis (fv).
 
@@ -224,13 +228,13 @@ an element with the specified padding.
 
 WIP
 
-## Alignment
-
 ### MARGIN(\<size\>)
 > .m\<direction\>\<size\>
 
 Margins are **not recommended**. In my experience, using "v", "h" usually works,
 and it produces markup that is easier to read (less specific stuff).
+
+## Alignment
 
 ### HORIZONTAL(\<size\>)
 > .h\<size\>
@@ -273,3 +277,35 @@ Indicates that a child of a flex element should grow.
 > .fgc
 
 Indicates that all children of the flex element should grow.
+
+## Round
+
+You can add the .round class to make an element round.
+
+Discussed here is also the "r" command which also relates to border radius.
+
+### ROUND\_T(\<text size\>)
+> .round.t\<text size\>
+
+Adds support for round things that have a single character of the specified size.
+
+### ROUND\_PADDING(\<padding size\>, \<text size\>)
+> .p\<padding size\>.round.t\<text size\>
+
+The same as above but taking padding into account.
+
+### ROUND\_EDGE(\<size\>)
+> .r\<direction\>\<size\>
+
+Sets the border radius of the element in the specified direction.
+
+You can combine vertical and horizontal directions (in that order), or omit it completely, as you would expect.
+
+## Utility
+
+### HOVER\_SHADOW(\<selector\>,\<shadow\>,\<ease\>,\<other\>)
+
+Add properties to a selector so that it displays a growing shadow on hover
+using the ::after pseudo-selector as described here:
+
+![Fast box shadow](https://tobiasahlin.com/blog/how-to-animate-box-shadow/)
