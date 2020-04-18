@@ -195,3 +195,35 @@ Which correspond to:
 **Direction** in this case is used to indicate minimum (J) and maximum (K) sizes in that axis.
 
 **Size** may additionally be 100% (f) or 100% of the view in that axis (fv).
+
+### PADDING(\<size\>)
+> .p\<direction/axis\>\<size\>
+
+Adds padding to an element.
+
+### ABS\_PADDING(\<size\>)
+> .rel.p\<axis/direction\>\<size\> \> .abs \<direction\>
+
+Positions an element close to the edge of the parent element in the
+specified direction, taking into consideration the size of it's padding.
+
+### CENTER\_ABS\_V(\<size\>)
+> .abs.sv\<size\>
+
+Vertically centers an absolutely positioned element of known size.
+
+### CENTER\_ABS\_VP(\<size\>,\<paddingK\>,\<paddingJ\>)
+> .pK\<paddingK\>.pJ\<paddingJ\> > .abs.sv\<size\>
+
+Vertically centers an absolutely positioned element of known size, inside
+an element with the specified padding.
+
+### TABLE\_PADDING(\<size\>)
+
+WIP
+
+### MARGIN(\<size\>)
+> .m\<direction\>\<size\>
+
+Margins are **not recommended**. In my experience, using "v", "h" usually works,
+and it produces markup that is easier to read (less specific stuff).
