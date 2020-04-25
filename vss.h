@@ -33,7 +33,7 @@
 label > input, label > textarea { display: block; }
 
 .fw input, .fw select, .fw textarea { width: 100%; }
-.fw input { width: calc(100% - 2 * CONFIG_IPH - 2px); }
+.fw input, .fw textarea { width: calc(100% - 2 * CONFIG_IPH - 2px); }
 input, textarea { padding: 6px CONFIG_IPH; }
 
 input, textarea { color: C_black; }

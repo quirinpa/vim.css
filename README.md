@@ -103,8 +103,8 @@ They specify the category upon which to act, or what operation to perform.
 Commands may have two letters. In this case they specify both.
 There are also commands that are only meant to be combined with others.
 
-**Command parameters** use labels to specify values for commands.
-If you omit a parameter either a default value is used, or all values are assumed.
+**Command parameters** use labels to specify command parameters.
+If you omit a parameter either a default, or all values are used.
 
 The following sections are separated by category. The titles of their sub-sections
 are usually gcc preprocessor macros. They receive parameters as arguments and generate
