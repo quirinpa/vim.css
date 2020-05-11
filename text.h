@@ -6,7 +6,7 @@
 	 .th ## _t { line-height: T_ ## _t; }
 
 #define COLOR(_c) \
-	.C ## _c { color: C_ ## _c !important; }
+	.cf ## _c { color: C_ ## _c !important; }
 
 #define BG_COLOR(_c) \
 	.c ## _c { background-color: C_ ## _c; color: white; }

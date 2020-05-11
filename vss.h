@@ -9,6 +9,7 @@
 #define BH(_s) (S_ ## _s + RP(_s))
 #define RP(_s) (S_ ## _s / PI)
 
+#ifdef CONFIG_VARS
 :root {
 	VARS(T, TS)
 
@@ -21,6 +22,7 @@
 	--RPxl: RP(xl);
 	--BHxl: BH(xl);
 }
+#endif
 
 #include "text.h"
 #include "size.h"
@@ -74,3 +76,5 @@ HOVER_SHADOW(
 	0.3s ease-in-out,
 	border-radius: S_s
 )
+
+.dn { display: none !important; }

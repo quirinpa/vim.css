@@ -8,6 +8,7 @@
 	.h ## _s > :first-child { margin-left: 0; }
 
 #define VERTICAL(_s) \
+	.v ## _s { flex-direction: column; } \
 	.v ## _s > * { margin-top: S(_s); display: block } \
 	.v ## _s > :first-child { margin-top: 0; } \
 
