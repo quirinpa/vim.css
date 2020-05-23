@@ -9,7 +9,7 @@
 	.cf ## _c { color: C_ ## _c !important; }
 
 #define BG_COLOR(_c) \
-	.c ## _c { background-color: C_ ## _c; color: white; }
+	.c ## _c { background-color: C_ ## _c; }
 
 #define BO_COLOR(_c) \
 	.B ## _c { border: solid thin C_ ## _c; } \

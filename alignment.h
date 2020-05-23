@@ -36,7 +36,7 @@
 .f.c { align-items: center; }
 
 .f { display: flex !important; }
-.f.v0 { flex-direction: column; }
+.f.vn { flex-direction: column; }
 .fg { flex-grow: 1; }
 .fg- { flex-grow: 0 !important; }
 .fgc > * { flex-grow: 1; }
@@ -66,5 +66,7 @@
 	justify-content: center;
 	text-align: center;
 }
+
+.dn { display: none! important; }
 
 #endif

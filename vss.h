@@ -78,3 +78,4 @@ HOVER_SHADOW(
 )
 
 .dn { display: none !important; }
+script { display: none !important; }
