@@ -2,7 +2,8 @@ gcc-vss := gcc ${CFLAGS} -E -P -nostdinc -undef -x c
 vss-out ?= ../vim.css
 vss-color ?= c.txt
 vss-dir := ${srcdir}/vss
-vss-CFLAGS-y := -I${vss-dir}
+PREFIX ?= /usr/local
+vss-CFLAGS-y := -I${vss-dir} -I${PREFIX}/include
 vss-clean-y := ./t.h ./c.h ${vss-out}
 
 all: $(vss-out)
