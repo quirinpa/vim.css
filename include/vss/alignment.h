@@ -43,22 +43,22 @@
 
 /* .fic { align-items: center; } */
 .fis { align-items: stretch; }
-.fiK { align-items: flex-start; }
-.fiJ { align-items: flex-end; }
+.fik { align-items: flex-start; }
+.fij { align-items: flex-end; }
 
 .fcc { justify-content: center; }
-.fcK { justify-content: flex-start; }
-.fcJ { justify-content: flex-end; }
+.fck { justify-content: flex-start; }
+.fcj { justify-content: flex-end; }
 
-.faK { align-self: flex-start; }
-.faJ { align-self: flex-end; }
+.fak { align-self: flex-start; }
+.faj { align-self: flex-end; }
 
 .rel { position: relative; }
 .abs { position: absolute; }
-.abs.H { left: 0; }
-.abs.J { bottom: 0; }
-.abs.K { top: 0; }
-.abs.L { right: 0; }
+.abs.h { left: 0; }
+.abs.j { bottom: 0; }
+.abs.k { top: 0; }
+.abs.l { right: 0; }
 
 .tcv {
 	display: inline-flex !important;

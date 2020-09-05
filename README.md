@@ -3,10 +3,7 @@
 This is a css framework that uses some concepts I've learned from the VIM editor.
 
 I find that just like in VIM, once you understand it, it speeds up development and improves the result.
-
-If you don't mind using make (POSIX) in your project, you can change configuration.
-
-Otherwise you can just download a pre-configured vim.css.
+Assuming your development cycle fits well with it. You can even easily change configuration.
 
 # Example markup
 
@@ -76,10 +73,8 @@ ROUND_PADDING( , l)
 main { color: C_black !important; }
 !
 cat - > vss/Makefile <<!
-srcdir := .
-vss-path := \${HOME}/vim.css
-vss-t-args := -a0.112 -b-0.61 -c3.9 -d6.1 -m0.88
-include \${vss-path}/vss.mk
+vss-prefix := \${HOME}/vim.css
+include \${vss-prefix}/mk/vss.mk
 !
 cat - > vss/c.txt <<!
 pri cyan
@@ -131,7 +126,7 @@ This allows you to specify these values.
 
 The following labels apply to font sizes (for now, this is not customizable):
 ```h
-#define TS xs, s, , m, ml, l, xl, xxl, Xl, xXl, Xxl, XXl, L
+#define TS xs, s, , m, ml, l, xl, xxl, ll, xll, xxll, lll, xlll
 ```
 
 ## TEXT\_SIZE(\<text size\>)
@@ -156,7 +151,7 @@ This is possible using this macro, as long there is no extra padding (for that, 
 
 The tb command sets the bold level of an element. Bold levels' labels are:
 
-xXs, Xs, xxs, xs, s, , xl, xxl, Xl
+xss, ss, xxs, xs, s, , xl, xxl, ll
 
 The corresponding values are:
 
@@ -168,7 +163,7 @@ So an element with the "tb" class would have bold text and "txs" would have regu
 Colors are generated based on the configuration file /vss/c.txt.
 
 ## COLOR(\<color\>)
-> .C\<color\>
+> .cf\<color\>
 
 Sets an element's color to the one specified.
 
@@ -178,13 +173,13 @@ Sets an element's color to the one specified.
 Sets an element's background color to the one specified.
 
 ## BO\_COLOR(\<color\>)
-> .B\<direction\>\<color\>
+> .b\<direction\>\<color\>
 
 Sets the border to the specified color.
 
 **Direction** is specified using:
 
-H, J, K, L
+h, j, k, l
 
 Which means left, bottom, top and right, just like in VIM.
 
@@ -197,7 +192,7 @@ Size uses the formula:
 
 Where x is the index of the label intended, of the possible:
 
-xxs, xs, s, , m, l, xl, xxl, Xl
+xxs, xs, s, , m, l, xl, xxl, ll
 
 Which correspond to:
 
@@ -206,9 +201,9 @@ Which correspond to:
 ## SIZE(\<size\>)
 > .s\<direction\>\<axis\>\<size\>
 
-**Direction** in this case is used to indicate minimum (J) and maximum (K) sizes in that axis.
+**Direction** in this case is used to indicate minimum (j) and maximum (k) sizes in that axis.
 
-**Axis** might be horizontal (h) or vertical (v). This parameter is the only one that is required.
+**Axis** might be horizontal (\_) or vertical (v). This parameter is the only one that is required.
 
 **Size** may additionally be 100% (f) or 100% of the view in that axis (fv).
 
@@ -229,7 +224,7 @@ specified direction, taking into consideration the size of it's padding.
 Vertically centers an absolutely positioned element of known size.
 
 ## CENTER\_ABS\_VP(\<size\>,\<paddingK\>,\<paddingJ\>)
-> .pK\<paddingK\>.pJ\<paddingJ\> > .abs.sv\<size\>
+> .pk\<paddingK\>.pj\<paddingJ\> > .abs.sv\<size\>
 
 Vertically centers an absolutely positioned element of known size, inside
 an element with the specified padding.

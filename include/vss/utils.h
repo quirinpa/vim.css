@@ -66,26 +66,4 @@
 #define CALL_17(D, a, ...) D(a) CALL_16(D, __VA_ARGS__)
 #define CALL_18(D, a, ...) D(a) CALL_17(D, __VA_ARGS__)
 
-#if 0
-#define READ(W, WS) CAT(READ_, COUNT(WS))(WS)
-#define READ_1(W, a) CAT(W, a)
-#define READ_2(W, a, ...) CAT(W, a), READ_1(W, __VA_ARGS__)
-#define READ_3(W, a, ...) CAT(W, a), READ_2(W, __VA_ARGS__)
-#define READ_4(W, a, ...) CAT(W, a), READ_3(W, __VA_ARGS__)
-#define READ_5(W, a, ...) CAT(W, a), READ_4(W, __VA_ARGS__)
-#define READ_6(W, a, ...) CAT(W, a), READ_5(W, __VA_ARGS__)
-#define READ_7(W, a, ...) CAT(W, a), READ_6(W, __VA_ARGS__)
-#define READ_8(W, a, ...) CAT(W, a), READ_7(W, __VA_ARGS__)
-#define READ_9(W, a, ...) CAT(W, a), READ_8(W, __VA_ARGS__)
-#define READ_10(W, a, ...) CAT(W, a), READ_9(W, __VA_ARGS__)
-#define READ_11(W, a, ...) CAT(W, a), READ_10(W, __VA_ARGS__)
-#define READ_12(W, a, ...) CAT(W, a), READ_11(W, __VA_ARGS__)
-#define READ_13(W, a, ...) CAT(W, a), READ_12(W, __VA_ARGS__)
-#define READ_14(W, a, ...) CAT(W, a), READ_13(W, __VA_ARGS__)
-#define READ_15(W, a, ...) CAT(W, a), READ_14(W, __VA_ARGS__)
-#define READ_16(W, a, ...) CAT(W, a), READ_15(W, __VA_ARGS__)
-#define READ_17(W, a, ...) CAT(W, a), READ_16(W, __VA_ARGS__)
-#define READ_18(W, a, ...) CAT(W, a), READ_17(W, __VA_ARGS__)
-#endif
-
 #endif

@@ -24,14 +24,14 @@ install:
 	mkdir -p ${INSTALL_MKDIR}
 	${INSTALL} ./vss.mk ${INSTALL_MKDIR}
 	mkdir -p ${INSTALL_INCDIR}
-	${INSTALL} ./vss.h ${INSTALL_INCDIR}
-	${INSTALL} ./h.h ${INSTALL_INCDIR}
-	${INSTALL} ./s.h ${INSTALL_INCDIR}
-	${INSTALL} ./text.h ${INSTALL_INCDIR}
-	${INSTALL} ./utils.h ${INSTALL_INCDIR}
-	${INSTALL} ./round.h ${INSTALL_INCDIR}
-	${INSTALL} ./alignment.h ${INSTALL_INCDIR}
-	${INSTALL} ./size.h ${INSTALL_INCDIR}
-	${INSTALL} ./text.h ${INSTALL_INCDIR}
+	${INSTALL} ./include/vss/vss.h ${INSTALL_INCDIR}
+	${INSTALL} ./include/vss/h.h ${INSTALL_INCDIR}
+	${INSTALL} ./include/vss/s.h ${INSTALL_INCDIR}
+	${INSTALL} ./include/vss/text.h ${INSTALL_INCDIR}
+	${INSTALL} ./include/vss/utils.h ${INSTALL_INCDIR}
+	${INSTALL} ./include/vss/round.h ${INSTALL_INCDIR}
+	${INSTALL} ./include/vss/alignment.h ${INSTALL_INCDIR}
+	${INSTALL} ./include/vss/size.h ${INSTALL_INCDIR}
+	${INSTALL} ./include/vss/text.h ${INSTALL_INCDIR}
 
 PHONY: clean install

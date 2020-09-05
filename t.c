@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <string.h>
 
-static char *label[] = { "xs", "s", "", "m", "ml", "l", "xl", "xxl", "Xl", "xXl", "Xxl", "XXl", "L" };
+static char *label[] = { "xs", "s", "", "m", "ml", "l", "xl", "xxl", "ll", "xll", "xxll", "lll", "xlll" };
 static const int l = sizeof(label) / sizeof(char *);
 
 static float f(float x, float a, float b, float c, float d) {

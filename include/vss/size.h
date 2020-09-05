@@ -14,46 +14,46 @@
 
 #define SIZE(_s) \
 	.sv ## _s, .s ## _s { height: S(_s); } \
-	.sh ## _s, .s ## _s { width: S(_s); } \
+	.s_ ## _s, .s ## _s { width: S(_s); } \
 	.st ## _s { line-height: S(_s); } \
-	.sKh ## _s { max-width: S(_s); } \
-	.sKv ## _s { max-height: S(_s); }
+	.sk_ ## _s { max-width: S(_s); } \
+	.skv ## _s { max-height: S(_s); }
 
 #define PADDING(_s) \
 	.p ## _s { padding: S(_s); } \
 	.p ## _s > .W { width: calc(100% - 2 * S(_s)); }
 
 #define DIR_PADDING(_s) \
-	.ph ## _s { padding-left: S(_s); padding-right: S(_s); } \
+	.p_ ## _s { padding-left: S(_s); padding-right: S(_s); } \
 	.pv ## _s { padding-top: S(_s); padding-bottom: S(_s); } \
-	.pH ## _s { padding-left: S(_s); } \
-	.pJ ## _s { padding-bottom: S(_s); } \
-	.pK ## _s { padding-top: S(_s); } \
-	.pL ## _s { padding-right: S(_s); }
+	.ph ## _s { padding-left: S(_s); } \
+	.pj ## _s { padding-bottom: S(_s); } \
+	.pk ## _s { padding-top: S(_s); } \
+	.pl ## _s { padding-right: S(_s); }
 
 #define ABS_PADDING(_s) \
-	.ph ## _s > .abs.H { left: S(_s); } \
-	.pv ## _s > .abs.J { bottom: S(_s); } \
-	.pv ## _s > .abs.K { top: S(_s); } \
-	.ph ## _s > .abs.L { right: S(_s); } \
-	.ph ## _s > .abs.W { width: calc(100% - S(_s) * 2); } \
+	.p_ ## _s > .abs.dh { left: S(_s); } \
+	.pv ## _s > .abs.dj { bottom: S(_s); } \
+	.pv ## _s > .abs.dk { top: S(_s); } \
+	.p_ ## _s > .abs.dl { right: S(_s); } \
+	.p_ ## _s > .abs.W { width: calc(100% - S(_s) * 2); } \
 	\
-	.p ## _s > .abs.H { left: S(_s); } \
-	.p ## _s > .abs.J { bottom: S(_s); } \
-	.p ## _s > .abs.K { top: S(_s); } \
-	.p ## _s > .abs.L { right: S(_s); } \
+	.p ## _s > .abs.dh { left: S(_s); } \
+	.p ## _s > .abs.dj { bottom: S(_s); } \
+	.p ## _s > .abs.dk { top: S(_s); } \
+	.p ## _s > .abs.dl { right: S(_s); } \
 	.p ## _s > .abs.W { width: calc(100% - S(_s) * 2); } \
 	\
-	.pH ## _s > .abs.H { left: S(_s); } \
-	.pJ ## _s > .abs.J { bottom: S(_s); } \
-	.pK ## _s > .abs.K { top: S(_s); } \
-	.pL ## _s > .abs.J { right: S(_s); } \
+	.ph ## _s > .abs.dh { left: S(_s); } \
+	.pj ## _s > .abs.dj { bottom: S(_s); } \
+	.pk ## _s > .abs.dk { top: S(_s); } \
+	.pl ## _s > .abs.dl { right: S(_s); } \
 
 #define CENTER_ABS_V(_s) \
 	.abs.s ## _s, .abs.sv ## _s { top: calc(50% - S(_s) / 2); }
 
 #define CENTER_ABS_VP(_s, _pK, _pJ) \
-	.pK ## _pK.pJ ## _pJ > .abs.s ## _s { top: calc((100% - S(_s) + S(_pK) - S(_pJ)) / 2); }
+	.pk ## _pK.pj ## _pJ > .abs.s ## _s { top: calc((100% - S(_s) + S(_pK) - S(_pJ)) / 2); }
 
 #define TABLE_PADDING(_s) \
 	table.P ## _s > tbody > tr > td { padding: calc(S(_s) / 2); } \
@@ -63,10 +63,10 @@
 	table.P ## _s > tbody > tr > td { padding: S(_s) calc(S(_s) / 2); }
 
 #define MARGIN(_s) \
-	.mH ## _s { margin-left: S(_s) !important; } \
-	.mJ ## _s { margin-bottom: S(_s) !important; } \
-	.mK ## _s { margin-top: S(_s) !important; } \
-	.mL ## _s { margin-right: S(_s) !important; }
+	.mh ## _s { margin-left: S(_s) !important; } \
+	.mj ## _s { margin-bottom: S(_s) !important; } \
+	.mk ## _s { margin-top: S(_s) !important; } \
+	.ml ## _s { margin-right: S(_s) !important; }
 
 /* #define FW_PADDING(_s) \ */
 /* .p > .fw { width: calc(100% - 2 * S(_s)); } */

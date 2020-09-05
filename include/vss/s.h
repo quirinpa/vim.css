@@ -11,5 +11,5 @@
 #define S_l 32px
 #define S_xl 64px
 #define S_xxl 128px
-#define S_Xl 256px
+#define S_ll 256px
 #endif
