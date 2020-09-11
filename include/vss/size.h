@@ -3,13 +3,13 @@
 
 .shfv { width: 100vw; }
 .svfv { height: 100vh; }
-.shf { width: 100%; }
+.s_f { width: 100%; }
 .svf { height: 100%; }
 .sf { width: 100%; height: 100%; }
 .sfv { min-height: 100vh; width: 100vw; height: 100vh; }
-.sKhf { max-width: 100%; }
+.sK_f { max-width: 100%; }
 .sKvf { max-height: 100%; }
-.sJhf { min-width: 100%; }
+.sJ_f { min-width: 100%; }
 .sJvf { min-height: 100%; }
 
 #define SIZE(_s) \

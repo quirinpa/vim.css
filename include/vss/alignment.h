@@ -4,8 +4,8 @@
 #include "s.h"
 
 #define HORIZONTAL(_s) \
-	.h ## _s > * { margin-left: S(_s); display: inline-block; } \
-	.h ## _s > :first-child { margin-left: 0; }
+	._ ## _s > * { margin-left: S(_s); display: inline-block; } \
+	._ ## _s > :first-child { margin-left: 0; }
 
 #define VERTICAL(_s) \
 	.v ## _s { flex-direction: column; } \
@@ -20,9 +20,9 @@
 	.v ## _s.f { flex-direction: column; }
 
 #define SPLIT_HORIZONTAL(_s) \
-	.x.h ## _s { overflow: hidden; } \
-	.x.h ## _s > * { display: block; float: left; width: calc(50% - S(_s) / 2); } \
-	.x.h ## _s > input { width: calc(50% - 2 * CONFIG_IPH - S(_s) / 2 - 2px); }
+	.x._ ## _s { overflow: hidden; } \
+	.x._ ## _s > * { display: block; float: left; width: calc(50% - S(_s) / 2); } \
+	.x._ ## _s > input { width: calc(50% - 2 * CONFIG_IPH - S(_s) / 2 - 2px); }
 
 #define WRAP(_s) \
 	.w ## _s { \

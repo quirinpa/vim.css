@@ -38,21 +38,12 @@ label > input, label > textarea { display: block; }
 .fw input, .fw textarea { width: calc(100% - 2 * CONFIG_IPH - 2px); }
 input, textarea { padding: 6px CONFIG_IPH; }
 
-input, textarea { color: C_black; }
 button, a, *[ng-click] { cursor: pointer; user-select: none; }
 .hid { display: none !important; }
 body { margin: 0 }
 /* table { width: 100%; } */
 * {
 	font-family: inherit;
-}
-button {
-	color: C_black;
-	background-color: C_pri;
-	border: none;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-	border-radius: S_s;
-	position: relative;
 }
 
 #define HOVER_SHADOW(_selector, _shadow, _ease, _other) \
