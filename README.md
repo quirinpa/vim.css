@@ -69,12 +69,6 @@ And so x would be m * 5. In this example, y would eventually result in the font 
 
 The th command sets line height.
 
-## ROUND\_T(\<text size\>)
-> .t\<text size\>.round
-
-Say we wanted an element that is round and that features a single character, of the size specified.
-This is possible using this macro, as long there is no extra padding (for that, there is ROUND\_PADDING).
-
 ## bold levels
 > .tb\<bold level\>
 
@@ -87,6 +81,16 @@ The corresponding values are:
 100, 200, 300, 400, 500, 600, 700, 800 and 900
 
 So an element with the "tb" class would have bold text and "txs" would have regular weighted text.
+
+## Others
+
+> .ta\<modifier\>
+
+Text-align (l)eft, (c)enter or (r)ight.
+
+> .tuc
+
+Text-transform: uppercase.
 
 # Colors
 Colors are generated based on the configuration file /vss/c.txt.
@@ -113,16 +117,6 @@ h, j, k, l
 Which means left, bottom, top and right, just like in VIM.
 
 If you don't specify a direction, then all directions are assumed.
-
-## Others
-
-> .ta\<modifier\>
-
-Text-align (l)eft, (c)enter or (r)ight.
-
-> .tuc
-
-Text-transform: uppercase.
 
 # Size
 Size uses the formula:
