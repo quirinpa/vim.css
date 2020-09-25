@@ -15,10 +15,7 @@ I apologise in advance for some things which are not well organized yet (wip).
 
 # Example
 
-Check out the /example directory for a complete example of how to use vim.css
-to produce the following output:
-
-![Example screenshot](https://raw.githubusercontent.com/quirinpa/vim.css/master/example.png)
+Check out the /example directory for a complete example.
 
 # Key Concepts
 
@@ -157,9 +154,9 @@ Positions an element close to the edge of the parent element in the
 specified direction, taking into consideration the size of it's padding.
 
 ## CENTER\_ABS\_V(\<size\>)
-> .abs.sv\<size\>
+> .abs.s\<size\>, .abs.sv\<size\>
 
-Vertically centers an absolutely positioned element of known size.
+Automatically vertically centers absolutely positioned elements of known size.
 
 ## CENTER\_ABS\_VP(\<size\>,\<paddingK\>,\<paddingJ\>)
 > .pk\<paddingK\>.pj\<paddingJ\> > .abs.sv\<size\>
