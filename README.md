@@ -13,91 +13,12 @@ Consult /include/vss/\* for all available classes / commands.
 
 I apologise in advance for some things which are not well organized yet (wip).
 
-# Example markup
+# Example
 
-Consider the following example index.html.
-
-```html
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="vim.css">
-	</head>
-	<body class="v0 f cblack sfv">
-		<header class="_ c p">
-			<a class="round cgrey p tl" href="help.txt">?</a>
-			<h1>vim.css example</h1>
-		</header>
-		<main class="v fg p cwhite">
-			<div>
-				My parent grows to fill the remaining
-				space of the screen.
-			</div>
-			<div>
-				I have 16px separations from my siblings
-				and we are rendered vertically in regards
-				to each other.
-			</div>
-			<div class="_s">
-				<span class="tb">We are rendered horizontally</span>
-				<span>And have 8px separations</span>
-			</div>
-		</main>
-	</body>
-</html>
-```
-
-Produces:
+Check out the /example directory for a complete example of how to use vim.css
+to produce the following output:
 
 ![Example screenshot](https://raw.githubusercontent.com/quirinpa/vim.css/master/example.png)
-
-# Example configuration
-
-Imagine you clone this repo to your home folder:
-```sh
-cd ~
-git clone git@github.com:quirinpa/vim.css.git
-```
-
-Then, in your project root (copy and paste):
-```sh
-mkdir vss
-cat - > vss/vss.config.h <<!
-#define CONFIG_IPH 12px
-#define CONFIG_ROUND
-#include "vss.h"
-CALL(TEXT_SIZE, TS)
-CALL(BG_COLOR, CS)
-CALL(COLOR, CS)
-CALL(BO_COLOR, CS)
-CALL(SIZE, SS)
-CALL(PADDING, SS)
-CALL(HORIZONTAL, SS)
-CALL(VERTICAL, SS)
-CALL(FLEX_VERTICAL, SS)
-CALL(ROUND_T, SS)
-ROUND_PADDING( , l)
-main { color: C_black !important; }
-!
-cat - > vss/Makefile <<!
-vss-prefix := \${HOME}/vim.css
-include \${vss-prefix}/mk/vss.mk
-!
-cat - > vss/c.txt <<!
-pri cyan
-xlgrey #eee
-grey grey
-white white
-black black
-lgrey #aaa
-red red
-!
-printf "/vss/t.h\n/vss/c.h" >> .gitignore
-printf "vss:\n\t\${MAKE} -C \$@\n.PHONY: vss\n" > Makefile
-```
-
-Hitting "make" on your project root would create /vim.css, then you just need include it in your html.
 
 # Key Concepts
 

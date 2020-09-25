@@ -19,7 +19,7 @@ $(vss-out): ./t.h ./c.h ./vss.config.h
 ./t.h:
 	${vss-path}vss_t ${vss-t-args} > $@
 
-./c.h:
+./c.h: c.txt
 	${vss-path}vss_c ${vss-color} > $@
 
 clean:
