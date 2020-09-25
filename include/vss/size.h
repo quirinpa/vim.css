@@ -1,16 +1,20 @@
 #ifndef SIZE_H
 #define SIZE_H
 
-.shfv { width: 100vw; }
+.s_fv { width: 100vw; }
 .svfv { height: 100vh; }
 .s_f { width: 100%; }
 .svf { height: 100%; }
 .sf { width: 100%; height: 100%; }
 .sfv { min-height: 100vh; width: 100vw; height: 100vh; }
-.sK_f { max-width: 100%; }
-.sKvf { max-height: 100%; }
-.sJ_f { min-width: 100%; }
-.sJvf { min-height: 100%; }
+.sk_f { max-width: 100%; }
+.skvf { max-height: 100%; }
+.sj_f { min-width: 100%; }
+.sjvf { min-height: 100%; }
+/* .sk_fv { max-width: 100vw; } */
+/* .skvfv { max-height: 100vh; } */
+/* .sj_fv { min-width: 100vw; } */
+/* .sjvfv { min-height: 100vh; } */
 
 #define SIZE(_s) \
 	.sv ## _s, .s ## _s { height: S(_s); } \
@@ -56,11 +60,11 @@
 	.pk ## _pK.pj ## _pJ > .abs.s ## _s { top: calc((100% - S(_s) + S(_pK) - S(_pJ)) / 2); }
 
 #define TABLE_PADDING(_s) \
-	table.P ## _s > tbody > tr > td { padding: calc(S(_s) / 2); } \
-	table.P ## _s th { padding-top: calc(S(_s) / 2); padding-bottom: calc(S(_s) / 2); } \
-	table.P ## _s > tbody > tr > td:first-child { padding-left: S(_s); } \
-	table.P ## _s > tbody > tr > td:last-child { padding-right: S(_s); } \
-	table.P ## _s > tbody > tr > td { padding: S(_s) calc(S(_s) / 2); }
+	table.tp ## _s > tbody > tr > td { padding: calc(S(_s) / 2); } \
+	table.tp ## _s th { padding-top: calc(S(_s) / 2); padding-bottom: calc(S(_s) / 2); } \
+	table.tp ## _s > tbody > tr > td:first-child { padding-left: S(_s); } \
+	table.tp ## _s > tbody > tr > td:last-child { padding-right: S(_s); } \
+	table.tp ## _s > tbody > tr > td { padding: S(_s) calc(S(_s) / 2); }
 
 #define MARGIN(_s) \
 	.mh ## _s { margin-left: S(_s) !important; } \

@@ -2,8 +2,16 @@
 
 This is a css framework that uses some concepts I've learned from the VIM editor.
 
-I find that just like in VIM, once you understand it, it speeds up development and improves the result.
-Assuming your development cycle fits well with it. You can even easily change configuration.
+I find that just like in VIM, once you understand it, it speeds up development
+and improves the result. You can even easily change configuration and create
+a more or less succint vim.css file.
+
+There are more commands than those presented here, and some combinations
+(ones that are not configurable) might be missing if i didn't find them as useful.
+
+Consult /include/vss/\* for all available classes / commands.
+
+I apologise in advance for some things which are not well organized yet (wip).
 
 # Example markup
 
@@ -17,7 +25,7 @@ Consider the following example index.html.
 		<link rel="stylesheet" type="text/css" href="vim.css">
 	</head>
 	<body class="v0 f cblack sfv">
-		<header class="h c p">
+		<header class="_ c p">
 			<a class="round cgrey p tl" href="help.txt">?</a>
 			<h1>vim.css example</h1>
 		</header>
@@ -31,7 +39,7 @@ Consider the following example index.html.
 				and we are rendered vertically in regards
 				to each other.
 			</div>
-			<div class="hs">
+			<div class="_s">
 				<span class="tb">We are rendered horizontally</span>
 				<span>And have 8px separations</span>
 			</div>
@@ -185,6 +193,16 @@ Which means left, bottom, top and right, just like in VIM.
 
 If you don't specify a direction, then all directions are assumed.
 
+## Others
+
+> .ta\<modifier\>
+
+Text-align (l)eft, (c)enter or (r)ight.
+
+> .tuc
+
+Text-transform: uppercase.
+
 # Size
 Size uses the formula:
 
@@ -212,6 +230,11 @@ Which correspond to:
 
 Adds padding to an element.
 
+## Absolute positioning
+> .rel .abs\<direction\>
+
+Positions an element close to the edge of the parent element in the specified direction,
+
 ## ABS\_PADDING(\<size\>)
 > .rel.p\<axis/direction\>\<size\> \> .abs.\<direction\>
 
@@ -230,19 +253,22 @@ Vertically centers an absolutely positioned element of known size, inside
 an element with the specified padding.
 
 ## TABLE\_PADDING(\<size\>)
+> .tp\<size\>
 
-WIP
+Provides an easy to define table with equally spaced cells (td).
+Header cells (th) are presented with half that amount vertically
+and no horizontal padding.
 
 ## MARGIN(\<size\>)
 > .m\<direction\>\<size\>
 
-Margins are **not recommended**. In my experience, using "v", "h" usually works,
+Margins are **not recommended**. In my experience, using "v" & "\_" usually works,
 and it produces markup that is easier to read (less specific stuff).
 
 # Alignment
 
 ## HORIZONTAL(\<size\>)
-> .h\<size\>
+> .\_\<size\>
 
 This makes it so that an element's children are displayed horizontally, separated
 by the size specified.
@@ -255,25 +281,25 @@ The same, but for displaying children vertically.
 The size may aditionally be "0".
 
 ## SPLIT\_HORIZONTAL(\<size\>)
-> .x.h\<size\>
+> .x.\_\<size\>
 
 Indicates that an "h" element should be split in half.
 
 ## WRAP(\<size\>)
 > .w\<size\>
 
-Flex-wrap version of "h".
+Flex-wrap version of "\_".
 
 Props to mister Rubens Almeida for coming up with the first version.
 
 ## Others
 > .f
 
-Combine with "h" and "v" to indicate a flex element with those caracteristics.
+Combine with "\_" and "v" to indicate a flex element with those caracteristics.
 
 > .c
 
-Combine with "h" and optionally "f" to center vertically.
+Combine with "\_" and optionally "f" to center vertically.
 
 > .fg
 
@@ -282,6 +308,22 @@ Indicates that a child of a flex element should grow.
 > .fgc
 
 Indicates that all children of the flex element should grow.
+
+> .fg-
+
+Indicates that a child of a flex element should not grow.
+
+> .fi\<modifier\>
+
+Flex align-items (c)enter (same as .f.c), (s)tretch, (k) flex-start, (j) flex-end.
+
+> .fc\<modifier\>
+
+Flex justify-content (c)enter, (k) flex-start, (j) flex-end.
+
+> .fa\<modifier\>
+
+Flex align-self (k) flex-start, (j) flex-end.
 
 # Round
 

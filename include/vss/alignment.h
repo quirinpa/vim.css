@@ -41,7 +41,7 @@
 .fg- { flex-grow: 0 !important; }
 .fgc > * { flex-grow: 1; }
 
-/* .fic { align-items: center; } */
+.fic { align-items: center; }
 .fis { align-items: stretch; }
 .fik { align-items: flex-start; }
 .fij { align-items: flex-end; }
