@@ -55,10 +55,10 @@
 
 .rel { position: relative; }
 .abs { position: absolute; }
-.abs.h { left: 0; }
-.abs.j { bottom: 0; }
-.abs.k { top: 0; }
-.abs.l { right: 0; }
+.ah { left: 0; }
+.aj { bottom: 0; }
+.ak { top: 0; }
+.al { right: 0; }
 
 .tcv {
 	display: inline-flex !important;

@@ -1,6 +1,6 @@
 #ifndef SS_N
 #define SS_N 10
-#define SS n, xs, s, , m, l, xl, xxl, Xl
+#define SS n, xxs, xs, s, , m, l, xl, xxl, ll
 #define S(a) S_ ## a
 #define S_n 0px
 #define S_xxs 2px
