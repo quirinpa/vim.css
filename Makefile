@@ -22,7 +22,7 @@ install:
 	${INSTALL} ./bin/vss_t ${INSTALL_BINDIR}
 	${INSTALL} ./bin/vss_c ${INSTALL_BINDIR}
 	mkdir -p ${INSTALL_MKDIR}
-	${INSTALL} ./vss.mk ${INSTALL_MKDIR}
+	${INSTALL} ./mk/vss.mk ${INSTALL_MKDIR}
 	mkdir -p ${INSTALL_INCDIR}
 	${INSTALL} ./include/vss/vss.h ${INSTALL_INCDIR}
 	${INSTALL} ./include/vss/h.h ${INSTALL_INCDIR}
