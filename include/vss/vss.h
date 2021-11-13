@@ -32,6 +32,8 @@
 #include "round.h"
 #endif
 
+.oa { overflow: auto; }
+
 label > input, label > textarea { display: block; }
 
 .fw input, .fw select, .fw textarea { width: 100%; }

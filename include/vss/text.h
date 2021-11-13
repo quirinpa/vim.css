@@ -25,15 +25,15 @@
 .tuc { text-transform: uppercase; }
 .vak { vertical-align: top; }
 
-.tbxss { font-weight: 100; }
-.tbss { font-weight: 200; }
-.tbxxs { font-weight: 300; }
-.tbxs { font-weight: 400; } /* regular (in this case?) */
-.tbs { font-weight: 500; }
-.tb { font-weight: 600; }
-.tbxl { font-weight: 700; }
-.tbxxl { font-weight: 800; }
-.tbll { font-weight: 900; }
+.tbxss { font-weight: 100; } /* thin */
+.tbss { font-weight: 200; } /* extra-light */
+.tbxxs { font-weight: 300; } /* light */
+.tbxs { font-weight: 400; } /* regular */
+.tbs { font-weight: 500; } /* medium */
+.tb { font-weight: 600; } /* semi-bold */
+.tbxl { font-weight: 700; } /* bold */
+.tbxxl { font-weight: 800; } /* extra-bold */
+.tbll { font-weight: 900; } /* black */
 
 .tnow { white-space: nowrap; }
 

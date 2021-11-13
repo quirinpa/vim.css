@@ -14,7 +14,7 @@ vss-clean-y := ./t.h ./c.h ${vss-out}
 all: $(vss-out)
 
 $(vss-out): ./t.h ./c.h ./vss.config.h
-	gcc ${vss-CFLAGS-y} -E -P -nostdinc -undef -x c ./vss.config.h > $@
+	${CC} ${vss-CFLAGS-y} -E -P -nostdinc -undef -x c ./vss.config.h > $@
 
 ./t.h:
 	${vss-path}vss_t ${vss-t-args} > $@

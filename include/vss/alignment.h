@@ -52,6 +52,7 @@
 
 .fak { align-self: flex-start; }
 .faj { align-self: flex-end; }
+.fac { align-self: center; }
 
 .rel { position: relative; }
 .abs { position: absolute; }
