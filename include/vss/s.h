@@ -1,8 +1,7 @@
-#ifndef SS_N
-#define SS_N 10
-#define SS n, xxs, xs, s, , m, l, xl, xxl, ll
+#ifndef SS
+#define SS xxs, xs, s, , m, l, xl, xxl, ll
 #define S(a) S_ ## a
-#define S_n 0px
+/* #define S_n 0px */
 #define S_xxs 2px
 #define S_xs 4px
 #define S_s 8px
