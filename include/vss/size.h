@@ -24,7 +24,7 @@
 	.skv ## _s { max-height: S(_s); }
 
 #define PADDING(_s) \
-	.p ## _s { padding: S(_s); } \
+	.p ## _s { padding: S(_s) !important; } \
 	.p ## _s > .W { width: calc(100% - 2 * S(_s)); }
 
 #define DIR_PADDING(_s) \

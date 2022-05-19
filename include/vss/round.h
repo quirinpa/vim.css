@@ -10,13 +10,13 @@
 }
 
 #define ROUND_PADDING(_p, _t) \
-	.p ## _p.round.t ## _t { \
+	.p ## _p.round.ts ## _t { \
 		line-height: T_ ## _t; \
 		width: calc(T_ ## _t + 2 * S_ ## _p); \
 	}
 
 #define ROUND_T(_t) \
-	.round.t ## _t { \
+	.round.ts ## _t { \
 		line-height: T_ ## _t; \
 		width: calc(T_ ## _t); \
 	}

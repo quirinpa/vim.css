@@ -36,9 +36,11 @@
 
 label > input, label > textarea { display: block; }
 
+/*
 .fw input, .fw select, .fw textarea { width: 100%; }
 .fw input, .fw textarea { width: calc(100% - 2 * CONFIG_IPH - 2px); }
 input, textarea { padding: 6px CONFIG_IPH; }
+*/
 
 button, a, *[ng-click] { cursor: pointer; user-select: none; }
 .hid { display: none !important; }
@@ -56,9 +58,9 @@ body { margin: 0 }
 	} \
 	_selector:hover::after { opacity: 1; }
 
-button.round {
-	padding: 0;
-}
+//button.round {
+	//padding: 0;
+//}
 button.round::after {
 	border-radius: 50%;
 }

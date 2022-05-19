@@ -2,7 +2,7 @@
 #define TEXT_H
 
 #define TEXT_SIZE(_t) \
-	 .ts ## _t { font-size: T_ ## _t; } \
+	 .ts ## _t { font-size: T_ ## _t !important; } \
 	 .th ## _t { line-height: T_ ## _t; }
 
 #define COLOR(_c) \
