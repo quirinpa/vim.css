@@ -25,12 +25,11 @@ int main(int argc, char *argv[]) {
 
 	int i, mode = M_KEY;
 
-	printf("#ifndef CS_N\n#define C");
+	printf("#ifndef COLORS_N\n#define COLORS_N\n");
 	for (; buf_p < buf + buf_l; buf_p ++) {
 		switch (*buf_p) {
 			case '\n':
 				putchar('\n');
-				printf("#define C");
 				key_start = buf_p + 1;
 				mode = M_KEY;
 				continue;
@@ -49,13 +48,13 @@ int main(int argc, char *argv[]) {
 
 			default:
 				if (mode == M_KEY && buf_p == key_start)
-					putchar('_');
+					printf("#define VAL_COLOR_");
 
 				putchar(*buf_p);
 		}
 	}
 
-	printf("S_N %d\n#define CS ", keys_l);
+	printf("#define ALL_COLORS ");
 	for (i = 0;;) {
 		printf("%s", keys[i]);
 		i++;

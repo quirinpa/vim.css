@@ -4,23 +4,23 @@ INSTALL_BINDIR ?= ${PREFIX}/bin
 INSTALL_INCDIR ?= ${PREFIX}/include/vss
 srcdir := .
 
-all: ./bin/ ./bin/vss_t ./bin/vss_c
+all: ./bin/ ./bin/vss_text ./bin/vss_color
 
 ./bin/:
 	mkdir bin
 
-./bin/vss_t: t.c
-	cc t.c -o $@
+./bin/vss_text: vss_text.c
+	cc vss_text.c -o $@
 
-./bin/vss_c: c.c
-	cc c.c -o $@
+./bin/vss_color: vss_color.c
+	cc vss_color.c -o $@
 
 clean:
 	-rm -rf bin
 
 install:
-	${INSTALL} ./bin/vss_t ${INSTALL_BINDIR}
-	${INSTALL} ./bin/vss_c ${INSTALL_BINDIR}
+	${INSTALL} ./bin/vss_text ${INSTALL_BINDIR}
+	${INSTALL} ./bin/vss_color ${INSTALL_BINDIR}
 	mkdir -p ${INSTALL_MKDIR}
 	${INSTALL} ./mk/vss.mk ${INSTALL_MKDIR}
 	mkdir -p ${INSTALL_INCDIR}

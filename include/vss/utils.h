@@ -44,7 +44,7 @@
 #define VARS_16(W, a, ...) VAR(W, a) VARS_15(W, __VA_ARGS__)
 #define VARS_17(W, a, ...) VAR(W, a) VARS_16(W, __VA_ARGS__)
 #define VARS_18(W, a, ...) VAR(W, a) VARS_17(W, __VA_ARGS__)
-#define VAR(W, a) --W ## a: W ## _ ## a;
+#define VAR(W, a) --W ## a: VAL(W, a);
 
 #define CALL(D, ...) CAT(CALL_, COUNT(__VA_ARGS__))(D, __VA_ARGS__)
 #define CALL_1(D, a) D(a)
@@ -85,4 +85,19 @@
 #define CALL1_16(D, b, a, ...) D(b, a) CALL1_15(D, b, __VA_ARGS__)
 #define CALL1_17(D, b, a, ...) D(b, a) CALL1_16(D, b, __VA_ARGS__)
 #define CALL1_18(D, b, a, ...) D(b, a) CALL1_17(D, b, __VA_ARGS__)
+
+#define CAT(a, ...) PRIMITIVE_CAT(a, __VA_ARGS__)
+#define PRIMITIVE_CAT(a, ...) a ## __VA_ARGS__
+
+#define NC(...) CAT(NC_, COUNT(__VA_ARGS__))(__VA_ARGS__)
+#define NC_2(a, b) a ## b
+#define NC_3(a, b, c) a ## b ## c
+#define NC_4(a, b, c, d) a ## b ## c ## d
+#define NC_5(a, b, c, d, e) a ## b ## c ## d ## e
+#define NC_6(a, b, c, d, e, f) a ## b ## c ## d ## e ## f
+#define NC_7(a, b, c, d, e, f, g) a ## b ## c ## d ## e ## f ## g
+#define NC_8(a, b, c, d, e, f, g, h) a ## b ## c ## d ## e ## f ## g ## h
+#define NC_9(a, b, c, d, e, f, g, h, j) a ## b ## c ## d ## e ## f ## g ## h ## j
+#define NC_10(a, b, c, d, e, f, g, h, j, k) a ## b ## c ## d ## e ## f ## g ## h ## j ## k
+
 #endif
