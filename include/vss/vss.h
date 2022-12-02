@@ -33,6 +33,8 @@
 #define LB_FLEX_GROW NC(LB_FLEX, g)
 #define LB_FLEX_GROW_CHILDREN NC(LB_FLEX_GROW, c)
 #define LB_OVERFLOW o
+#define LB_FULL f
+#define LB_VIEW v
 #define LB_stretch s
 #define LB_space_between sb
 #define LB_center c
@@ -195,7 +197,8 @@
 	.NC(LB_horizontal, _s):not(.LB_FLEX) > * { margin-left: VAL(SIZE, _s); } \
 	.NC(LB_horizontal, _s):not(.LB_FLEX) > :first-child { margin-left: 0; } \
 	.NC(LB_horizontal, _s):not(.LB_FLEX) { overflow: hidden } \
-	.NC(LB_horizontal, _s):not(.LB_FLEX) > :not(.LB_FLEX) { display: block; float: left; } \
+	.NC(LB_horizontal, _s):not(.LB_FLEX) > :not(.LB_FLEX):not(table) { display: block; } \
+	.NC(LB_horizontal, _s):not(.LB_FLEX) > :not(.LB_FLEX) { float: left; } \
 	.NC(LB_horizontal, _s) > .LB_FLEX { display: inline-flex; } \
 	.NC(LB_horizontal, _s).LB_FLEX { column-gap: VAL(SIZE, _s); } \
 	.NC(LB_horizontal, _s).LB_FLEX > * { margin: 0; } \
@@ -288,10 +291,13 @@
 #define FONT_WEIGHT(WEIGHT) \
 	.NC(LB_FONT_WEIGHT, NC(LB_FONT_WEIGHT_, WEIGHT)) { font-weight: VAL(FONT_WEIGHT, WEIGHT); }
 
+#define FULL_SIZE_horizontal \
+	.NC(LB_SIZE, LB_horizontal, LB_FULL) { width: 100%; } \
+
 #define FULL_SIZE \
 	.NC(LB_SIZE, LB_horizontal, LB_FULL, LB_VIEW) { width: 100vw; } \
 	.NC(LB_SIZE, LB_vertical, LB_FULL, LB_VIEW) { height: 100vh; } \
-	.NC(LB_SIZE, LB_horizontal, LB_FULL) { width: 100%; } \
+	FULL_SIZE_horizontal \
 	.NC(LB_SIZE, LB_vertical, LB_FULL) { height: 100%; } \
 	.NC(LB_SIZE, LB_FULL) { width: 100%; height: 100%; } \
 	.NC(LB_SIZE, LB_FULL, LB_VIEW) { width: 100vw; height: 100vh; }
