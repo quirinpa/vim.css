@@ -13,4 +13,5 @@
 #define VAL_SIZE_64 64px
 #define VAL_SIZE_128 128px
 #define VAL_SIZE_256 256px
+#define VAL_SIZE_auto auto
 #endif

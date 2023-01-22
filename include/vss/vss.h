@@ -13,6 +13,7 @@
 #define LB_FONT_SIZE NC(LB_TEXT, s)
 #define LB_LINE_HEIGHT NC(LB_TEXT, h)
 #define LB_TEXT_TRANSFORM NC(LB_TEXT, t)
+#define LB_TEXT_OVERFLOW NC(LB_TEXT, o)
 #define LB_POSITION a
 #define LB_PADDING p
 #define LB_TABLE tbl
@@ -43,9 +44,10 @@
 #define LB_relative rel
 #define LB_auto a
 #define LB_hidden h
+#define LB_ellipsis e
 #define LB_vertical v
 
-#ifdef VSS_VANILLA
+#ifdef CONFIG_VANILLA
 #define LB_horizontal _
 #define LB_left h
 #define LB_right l
@@ -70,22 +72,12 @@
 #define COLOR(_c) \
 	.NC(LB_COLOR, _c) { color: VAL(COLOR, _c) !important; }
 
-#define BG_COLOR(_c) \
-	.NC(LB_BACKGROUND_COLOR, _c) { background-color: VAL(COLOR, _c); }
+#define BACKGROUND_COLOR(_c) \
+	.NC(LB_BACKGROUND_COLOR, _c) { background-color: VAL(COLOR, _c) !important; }
 
 #define OUTLINE(_c) \
 	.NC(LB_OUTLINE, _c) { outline: solid thin VAL(COLOR, _c); }
 
-#define OUTLINE_DIR(DIRE, _c) \
-	.NC(LB_OUTLINE, NC(LB_, DIRE), _c) { outline-DIRE: solid thin VAL(COLOR, _c); }
-
-#define ALL_OUTLINE(_c) \
-	OUTLINE(_c) \
-	OUTLINE_DIR(left, _c) \
-	OUTLINE_DIR(bottom, _c) \
-	OUTLINE_DIR(top, _c) \
-	OUTLINE_DIR(right, _c)
-	
 #define BORDER(_c) \
 	.NC(LB_BORDER, _c) { border: solid thin VAL(COLOR, _c); }
 
@@ -98,6 +90,12 @@
 	BORDER_DIR(bottom, _c) \
 	BORDER_DIR(top, _c) \
 	BORDER_DIR(right, _c)
+
+#define HEIGHT(VALUE) \
+	.NC(LB_SIZE, LB_vertical, NC(LB_, VALUE)) { height: VAL(SIZE, VALUE) !important; }
+
+#define MIN_WIDTH(VALUE) \
+	.NC(LB_SIZE, LB_bottom, LB_horizontal, NC(LB_, VALUE)) { min-width: VAL(SIZE, VALUE) !important; }
 	
 #define SIZE(_s) \
 	.NC(LB_SIZE, LB_vertical, _s), .NC(LB_SIZE, _s) { height: VAL(SIZE, _s); } \
@@ -239,7 +237,7 @@
 #define ROUND_T(_t) \
 	.LB_ROUND.NC(LB_FONT_SIZE, _t) { \
 		line-height: VAL(TEXT_SIZE, _t); \
-		width: VAL(TEXT_SIXE, _t); \
+		width: VAL(TEXT_SIZE, _t); \
 	}
 
 #define ROUND_EDGE(_s) \
@@ -382,6 +380,9 @@
 
 #define OVERFLOW(OVERFLOW) \
 	.NC(LB_OVERFLOW, NC(LB_, OVERFLOW)) { overflow: OVERFLOW; }
+
+#define TEXT_OVERFLOW(OVERFLOW) \
+	.NC(LB_TEXT_OVERFLOW, NC(LB_, OVERFLOW)) { text-overflow: OVERFLOW; }
 
 #define LB_TABLE_LAYOUT_fixed f
 #define VAL_TABLE_LAYOUT_fixed fixed
