@@ -124,8 +124,14 @@
 #define PAD_AXIS_DIR(AXIS, DIRE, _s) \
 	.NC(LB_PADDING, NC(LB_, AXIS), _s) > .NC(LB_POSITION, NC(LB_, DIRE)) { DIRE: VAL(SIZE, _s); }
 
-#define PAD_DIR_POS_DIR(DIRE, _s) \
-	PAD_AXIS_DIR(DIRE, DIRE, _s)
+#define ABS_DIST_DIR(DIRE, _s) \
+	.NC(LB_POSITION, NC(LB_, DIRE)) { DIRE: VAL(SIZE, _s); }
+
+#define ABS_DIST(_s) \
+	ABS_DIST_DIR(left, _s) \
+	ABS_DIST_DIR(bottom, _s) \
+	ABS_DIST_DIR(top, _s) \
+	ABS_DIST_DIR(right, _s)
 
 #define ABS_PADDING(_s) \
 	PAD_AXIS_DIR(horizontal, left, _s) \
@@ -193,7 +199,7 @@
 #ifndef VSS_NO_FLEX
 #define AXIS_horizontal(_s) \
 	.NC(LB_horizontal, _s):not(.LB_FLEX) > * { margin-left: VAL(SIZE, _s); } \
-	.NC(LB_horizontal, _s):not(.LB_FLEX) > :first-child { margin-left: 0; } \
+	.NC(LB_horizontal, _s):not(.LB_FLEX) > :first-child { margin-left: 0 !important; } \
 	.NC(LB_horizontal, _s):not(.LB_FLEX) { overflow: hidden } \
 	.NC(LB_horizontal, _s):not(.LB_FLEX) > :not(.LB_FLEX):not(table) { display: block; } \
 	.NC(LB_horizontal, _s):not(.LB_FLEX) > :not(.LB_FLEX) { float: left; } \
@@ -311,7 +317,7 @@
 	.NC(LB_SIZE, LB_bottom, LB_vertical, LB_FULL, LB_VIEW) { min-height: 100vh; }
 
 #define FLEX \
-	.LB_FLEX { display: flex; } \
+	.LB_FLEX { display: flex !important; } \
 	.LB_FLEX_WRAP { flex-wrap: wrap; } \
 
 #define VAL_ALIGN_ITEMS_center center
