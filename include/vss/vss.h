@@ -98,10 +98,11 @@
 	.NC(LB_SIZE, LB_bottom, LB_horizontal, NC(LB_, VALUE)) { min-width: VAL(SIZE, VALUE) !important; }
 	
 #define SIZE(_s) \
-	.NC(LB_SIZE, LB_vertical, _s), .NC(LB_SIZE, _s) { height: VAL(SIZE, _s); } \
-	.NC(LB_SIZE, LB_horizontal, _s), .NC(LB_SIZE, _s) { width: VAL(SIZE, _s); } \
-	.NC(LB_SIZE, LB_top, LB_horizontal, _s) { max-width: VAL(SIZE, _s); } \
-	.NC(LB_SIZE, LB_top, LB_vertical, _s) { max-height: VAL(SIZE, _s); }
+	.NC(LB_SIZE, _s) { height: VAL(SIZE, _s) !important; width: VAL(SIZE, _s) !important; } \
+	.NC(LB_SIZE, LB_vertical, _s), .NC(LB_SIZE, _s) { height: VAL(SIZE, _s) !important; } \
+	.NC(LB_SIZE, LB_horizontal, _s), .NC(LB_SIZE, _s) { width: VAL(SIZE, _s) !important; } \
+	.NC(LB_SIZE, LB_top, LB_horizontal, _s) { max-width: VAL(SIZE, _s) !important; } \
+	.NC(LB_SIZE, LB_top, LB_vertical, _s) { max-height: VAL(SIZE, _s) !important; }
 
 #define PADDING(_s) \
 	.NC(LB_PADDING, _s) { padding: VAL(SIZE, _s) !important; }
@@ -124,8 +125,11 @@
 #define PAD_AXIS_DIR(AXIS, DIRE, _s) \
 	.NC(LB_PADDING, NC(LB_, AXIS), _s) > .NC(LB_POSITION, NC(LB_, DIRE)) { DIRE: VAL(SIZE, _s); }
 
+#define ABS_DIST_ALL(_s) \
+	.LB_POSITION { left: VAL(SIZE, _s); right: VAL(SIZE, _s); top: VAL(SIZE, _s); bottom: VAL(SIZE, _s); }
+
 #define ABS_DIST_DIR(DIRE, _s) \
-	.NC(LB_POSITION, NC(LB_, DIRE)) { DIRE: VAL(SIZE, _s); }
+	.NC(LB_POSITION, NC(LB_, DIRE), _s) { DIRE: VAL(SIZE, _s); }
 
 #define ABS_DIST(_s) \
 	ABS_DIST_DIR(left, _s) \
@@ -238,12 +242,14 @@
 	.NC(LB_PADDING, _p).LB_ROUND.NC(LB_FONT_SIZE, _t) { \
 		line-height: VAL(TEXT_SIZE, _t); \
 		width: calc(VAL(TEXT_SIZE, _t) + 2 * VAL(SIZE, _p)); \
+		height: calc(VAL(TEXT_SIZE, _t) + 2 * VAL(SIZE, _p)); \
 	}
 
 #define ROUND_T(_t) \
 	.LB_ROUND.NC(LB_FONT_SIZE, _t) { \
 		line-height: VAL(TEXT_SIZE, _t); \
 		width: VAL(TEXT_SIZE, _t); \
+		height: VAL(TEXT_SIZE, _t); \
 	}
 
 #define ROUND_EDGE(_s) \
@@ -385,7 +391,9 @@
 	}
 
 #define OVERFLOW(OVERFLOW) \
-	.NC(LB_OVERFLOW, NC(LB_, OVERFLOW)) { overflow: OVERFLOW; }
+	.NC(LB_OVERFLOW, NC(LB_, OVERFLOW)) { overflow: OVERFLOW; } \
+	.NC(LB_OVERFLOW, LB_horizontal, NC(LB_, OVERFLOW)) { overflow-x: OVERFLOW !important; } \
+	.NC(LB_OVERFLOW, LB_vertical, NC(LB_, OVERFLOW)) { overflow-y: OVERFLOW !important; }
 
 #define TEXT_OVERFLOW(OVERFLOW) \
 	.NC(LB_TEXT_OVERFLOW, NC(LB_, OVERFLOW)) { text-overflow: OVERFLOW; }

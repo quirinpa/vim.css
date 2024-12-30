@@ -1,0 +1,21 @@
+{
+  "name": "@tty-pt/vim.css",
+  "version": "0.0.1",
+  "description": "A customizable bare CSS library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo @tty-pt/vim.css: No tests",
+    "postinstall": "make"
+  },
+  "files": [
+    "mk",
+    "include",
+    "*.c",
+    "LICENSE.txt",
+    "README.md",
+    "Makefile"
+  ],
+  "keywords": ["css", "framework"],
+  "author": "quirinpa",
+  "license": "BSD-2-Clause"
+}
