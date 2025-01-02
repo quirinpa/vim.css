@@ -25,13 +25,8 @@ install:
 	${INSTALL} ./mk/vss.mk ${INSTALL_MKDIR}
 	mkdir -p ${INSTALL_INCDIR}
 	${INSTALL} ./include/vss/vss.h ${INSTALL_INCDIR}
-	${INSTALL} ./include/vss/h.h ${INSTALL_INCDIR}
-	${INSTALL} ./include/vss/s.h ${INSTALL_INCDIR}
-	${INSTALL} ./include/vss/text.h ${INSTALL_INCDIR}
 	${INSTALL} ./include/vss/utils.h ${INSTALL_INCDIR}
-	${INSTALL} ./include/vss/round.h ${INSTALL_INCDIR}
-	${INSTALL} ./include/vss/alignment.h ${INSTALL_INCDIR}
 	${INSTALL} ./include/vss/size.h ${INSTALL_INCDIR}
-	${INSTALL} ./include/vss/text.h ${INSTALL_INCDIR}
+	${INSTALL} ./include/vss/div.h ${INSTALL_INCDIR}
 
 PHONY: clean install

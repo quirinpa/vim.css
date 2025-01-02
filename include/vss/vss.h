@@ -94,6 +94,9 @@
 #define HEIGHT(VALUE) \
 	.NC(LB_SIZE, LB_vertical, NC(LB_, VALUE)) { height: VAL(SIZE, VALUE) !important; }
 
+#define WIDTH(VALUE) \
+	.NC(LB_SIZE, LB_horizontal, NC(LB_, VALUE)) { width: VAL(SIZE, VALUE) !important; }
+
 #define MIN_WIDTH(VALUE) \
 	.NC(LB_SIZE, LB_bottom, LB_horizontal, NC(LB_, VALUE)) { min-width: VAL(SIZE, VALUE) !important; }
 	
@@ -213,7 +216,7 @@
 	ALL_DIV(horizontal, _s)
 
 #define AXIS_vertical(_s) \
-	.NC(LB_vertical, _s):not(.LB_FLEX) > * { margin-top: VAL(SIZE, _s); } \
+	.NC(LB_vertical, _s):not(.LB_FLEX) > * { margin-top: VAL(SIZE, _s); display: block; } \
 	.NC(LB_vertical, _s):not(.LB_FLEX) > :first-child { margin-top: 0; } \
 	.NC(LB_vertical, _s).LB_FLEX { row-gap: VAL(SIZE, _s); } \
 	.NC(LB_vertical, _s).LB_FLEX:not(.LB_FLEX_WRAP) { flex-direction: column; } \
