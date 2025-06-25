@@ -326,7 +326,7 @@
 	.NC(LB_SIZE, LB_bottom, LB_vertical, LB_FULL, LB_VIEW) { min-height: 100vh; }
 
 #define FLEX \
-	.LB_FLEX { display: flex !important; } \
+	.LB_FLEX { display: flex; } \
 	.LB_FLEX_WRAP { flex-wrap: wrap; } \
 
 #define VAL_ALIGN_ITEMS_center center
